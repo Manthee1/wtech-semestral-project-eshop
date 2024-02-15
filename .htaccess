@@ -1,0 +1,3 @@
+# Create main directory in public
+RewriteEngine On
+RewriteRule ^$ public/ [L]
