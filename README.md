@@ -16,6 +16,12 @@ Welcome to the Laravel E-Shop project! This is a web development project aimed a
 
 PRobobly gonan be a e shop that sells you nfts and stuff. Idk.
 
+
+## Dependencies
+* PHP 8.2
+* Laravel 10.0
+
+
 ## Installation
 
 To get started with this project, follow these steps:
@@ -35,13 +41,19 @@ To get started with this project, follow these steps:
    composer install
    ```
 
-5. Start the Docker containers (make sure you have [Docker](https://www.docker.com) installed on your machine):
+5. Generate a new application key(make sure you have [PHP](https://www.php.net) installed on your machine):
+
+   ```bash
+   php artisan key:generate
+   ```
+
+6. Start the Docker containers (make sure you have [Docker](https://www.docker.com) installed on your machine):
 
    ```bash
    docker-compose up
    ```
 
-6. Run migrations and seed the database:
+7. Run migrations and seed the database:
 
    ```bash
    php artisan migrate --seed
