@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     && docker-php-ext-install zip
 
+# Mysql
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Enable Apache modules
 RUN a2enmod rewrite
 
@@ -18,8 +21,7 @@ RUN a2enmod rewrite
 COPY . .
 
 # Set file permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
+RUN chmod -R 755 /var/www/html/storage && chown -R www-data:www-data /var/www/html
 
 # Expose port
 EXPOSE 80

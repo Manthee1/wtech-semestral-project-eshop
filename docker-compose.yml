@@ -1,5 +1,9 @@
 version: '3.8'
 
+networks:
+  app-network:
+    driver: bridge
+
 services:
   app:
     build:
@@ -9,10 +13,14 @@ services:
       - .env
     ports:
       - 8000:80
+    environment:
+      DB_HOST: db
     volumes:
       - .:/var/www/html
     depends_on:
       - db
+    networks:
+      - app-network
 
   db:
     image: mysql
@@ -20,6 +28,11 @@ services:
       - .env
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+    networks:
+      - app-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -29,6 +42,11 @@ services:
       PMA_HOST: db
     env_file:
       - .env
+    depends_on:
+      - db
+    networks:
+      - app-network
 
 volumes:
   db_data:
+
