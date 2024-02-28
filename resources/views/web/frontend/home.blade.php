@@ -1,8 +1,5 @@
 @extends('web.frontend.layout')
 
-@vite('resources/sass/home.sass')
-
-
 @section('content')
 <div class="container">
     <h1>Welcome to the Home Page</h1>
