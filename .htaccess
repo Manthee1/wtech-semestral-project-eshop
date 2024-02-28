@@ -1,6 +1,0 @@
-# Create main directory in public
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !\.(css|js|sass|scss)$
-RewriteRule ^$ public/ [L]
-RewriteCond %{REQUEST_URI} !\.(css|js|sass|scss)$
-RewriteRule (.*) public/$1 [L]
