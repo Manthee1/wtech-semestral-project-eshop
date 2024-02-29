@@ -14,6 +14,10 @@
 <body>
 
     <style>
+        .products {
+            background-color: var(--color-base-background);
+        }
+
         .filter-container {
             padding: 5rem 6rem;
         }
@@ -30,6 +34,12 @@
         .filter-container .checkbox-section div label {
             margin: 0px;
         }
+
+        .order-container li+li::before {
+            content: "|";
+            padding: 0 0.5rem;
+            color: var(--color-main-regular);
+        }
     </style>
 
 
@@ -41,7 +51,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Product</li>
             </ol>
         </div>
-        <section id="products" class="flex flex-row gap-3">
+        <section id="products" class="flex flex-row flex-nowrap flex-top gap-3 full-width">
             <div class="filter-container">
                 <form class="flex flex-column gap-5">
                     <div class="input-section">
@@ -121,16 +131,70 @@
                 </form>
 
             </div>
-
-            <div class="product-list-container">
-                <!-- Product list content goes here -->
-                SSS
+            <div class="flex flex-column gap-5" style="padding: 5rem 2rem;">
+                <div class="order-container">
+                    <div class="flex flex-row flex-left gap-4">
+                        <label class="m-0" for="order">Order By</label>
+                        <br>
+                        <ol class="flex flex-row gap-2 no-bullet m-0">
+                            <li class="flex flex-left gap-2">
+                                <ion-icon name="star"></ion-icon>
+                                <a href="#">Most Popular</a>
+                            </li>
+                            <li class="flex flex-left gap-2">
+                                <ion-icon name="calendar"></ion-icon>
+                                <a href="#">Newest</a>
+                            </li>
+                            <li class="flex flex-left gap-2">
+                                <ion-icon name="cash"></ion-icon>
+                                <a href="#">Price</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="product-list-container">
+                    <div class="flex flex-row gap-5">
+                        <div class="product-card">
+                            <img src="./img/car1.jpg" alt="car1">
+                            <div class="product-card-content">
+                                <h3 class="product-card-title">Car 1</h3>
+                                <p class="product-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit.</p>
+                                <div class="product-card-footer">
+                                    <span class="product-card-price">$100,000</span>
+                                    <button class="button button-outlined">View</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="./img/car2.jpg" alt="car2">
+                            <div class="product-card-content">
+                                <h3 class="product-card-title">Car 2</h3>
+                                <p class="product-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit.</p>
+                                <div class="product-card-footer">
+                                    <span class="product-card-price">$100,000</span>
+                                    <button class="button button-outlined">View</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="./img/car3.jpg" alt="car3">
+                            <div class="product-card-content">
+                                <h3 class="product-card-title">Car 3</h3>
+                                <p class="product-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit.</p>
+                                <div class="product-card-footer">
+                                    <span class="product-card-price">$100,000</span>
+                                    <button class="button button-outlined">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-
     </main>
-
 </body>
 
 </html>
