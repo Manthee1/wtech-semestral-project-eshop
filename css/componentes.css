@@ -1,0 +1,78 @@
+/* ------------------- */
+/* Navbar */
+/* ------------------- */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 3em;
+    background-color: var(--color-base-background);
+    gap: 2em;
+    height: var(--navbar-height);
+}
+
+nav>* {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav .search-container {
+    max-width: 600px;
+}
+
+
+
+.logo-container {
+    text-decoration: none;
+    color: var(--color-main-dark);
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.logo-container ion-icon {
+    margin-right: 10px;
+}
+
+
+/* ------------------- */
+/* Breadcrumbs */
+/* ------------------- */
+
+#breadcrumbs {
+    padding: 2rem 3rem;
+    background-color: var(--color-base-background);
+}
+
+
+.breadcrumb-item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.breadcrumb-item:first-child {
+    color: var(--color-main-regular);
+    font-size: 1.8rem;
+}
+
+.breadcrumb-item.active {
+    color: var(--color-main-regular);
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "———";
+    padding: 0 0.5rem;
+    color: var(--color-main-regular);
+}

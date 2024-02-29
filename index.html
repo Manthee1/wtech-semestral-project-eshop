@@ -4,10 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        #banner {
+            position: relative;
+            height: calc(100vh - var(--navbar-height));
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            color: #fff;
+            text-align: left;
+            padding: 0 10em;
+        }
+
+        .text-content {
+            margin-top: -20rem;
+        }
+
+        .banner-image {
+            position: absolute;
+            height: 60vh;
+            object-fit: contain;
+            z-index: -1;
+            right: 4rem;
+            bottom: 4rem;
+        }
+    </style>
+
 </head>
 
 <body>
+
+
+
+    <component>navbar</component>
+    <main>
+        <section id="banner">
+            <img class="banner-image" src="./img/banner-car-backgrond.png" alt="banner">
+            <div class="text-content">
+                <h1 class="text-title">Ride with Confidence</h1>
+                <p class="text-paragraph">
+                    Where Quality Meets the Open Road.
+                    <br>
+                    Explore Our Exceptional Collection Today!
+                </p>
+                <br>
+                <button class="button button-filled">Shop</button>
+            </div>
+        </section>
+        <!-- 
+        <button class="button button-outlined">Submit</button>
+        <button class="button button-clear">Submit</button> -->
+    </main>
 
 </body>
 

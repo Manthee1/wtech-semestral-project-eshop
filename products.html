@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+    <style>
+        .filter-container {
+            padding: 5rem 6rem;
+        }
+
+        .filter-container .input-section input {
+            max-width: 15rem;
+            min-width: 5rem;
+        }
+
+        .filter-container input[type="checkbox"] {
+            width: 3rem;
+        }
+
+        .filter-container .checkbox-section div label {
+            margin: 0px;
+        }
+    </style>
+
+
+    <component>navbar</component>
+    <main>
+        <div id="breadcrumbs" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Product</li>
+            </ol>
+        </div>
+        <section id="products" class="flex flex-row gap-3">
+            <div class="filter-container">
+                <form class="flex flex-column gap-5">
+                    <div class="input-section">
+                        <label for="cost">COST</label>
+                        <div class="flex flex-row gap-4">
+                            <input class="input-clear flex-auto" type="number" id="cost-from" name="cost-from"
+                                placeholder="From">
+                            <input class="input-clear flex-auto" type="number" id="cost-to" name="cost-to"
+                                placeholder="To">
+                        </div>
+                    </div>
+                    <div class="input-section">
+                        <label for="efficiency-from">EFFICIENCY</label>
+                        <div class="flex flex-row gap-4">
+                            <input class="input-clear flex-auto" type="number" id="efficiency-from"
+                                name="efficiency-from" placeholder="From">
+                            <input class="input-clear flex-auto" type="number" id="efficiency-to" name="efficiency-to"
+                                placeholder="To">
+                        </div>
+                    </div>
+                    <div class="checkbox-section">
+                        <label for="type">MAKE</label>
+                        <div class="flex flex-column gap-4">
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="volvo" name="volvo" value="volvo">
+                                <label for="volvo">Volvo <small>(43)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="saab" name="saab" value="saab">
+                                <label for="saab">Saab <small>(22)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="mercedes" name="mercedes" value="mercedes">
+                                <label for="mercedes">Mercedes <small>(32)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="audi" name="audi" value="audi">
+                                <label for="audi">Audi <small>(53)</small></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-section">
+                        <label for="type">DRIVETRAIN</label>
+                        <div class="flex flex-column gap-4">
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="volvo" name="volvo" value="volvo">
+                                <label for="volvo">Front <small>(43)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="saab" name="saab" value="saab">
+                                <label for="saab">Back <small>(22)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="mercedes" name="mercedes" value="mercedes">
+                                <label for="mercedes">Other <small>(32)</small></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-section">
+                        <label for="type">BODY TYPE</label>
+                        <div class="flex flex-column gap-4">
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="suv" name="suv" value="suv">
+                                <label for="suv">SUV <small>(43)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="sedan" name="sedan" value="sedan">
+                                <label for="sedan">Sedan <small>(22)</small></label>
+                            </div>
+                            <div class="flex flex-row flex-left">
+                                <input type="checkbox" id="hatchback" name="hatchback" value="hatchback">
+                                <label for="hatchback">Hatchback <small>(32)</small></label>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="product-list-container">
+                <!-- Product list content goes here -->
+                SSS
+            </div>
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>

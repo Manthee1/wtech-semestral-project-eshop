@@ -1,0 +1,63 @@
+/* Import css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('./lib/normalize.css');
+@import url('./lib/skeleton.css');
+@import url('./componentes.css');
+
+
+:root {
+    --color-main-white: #FFFFFF;
+    --color-main-light: #D6D6D6;
+    --color-main-medium: #626262;
+    --color-main-regular: #303030;
+    --color-main-dark: #1B1B1B;
+    --color-main-darker: #0B0B0B;
+    --color-main-darkest: #040404;
+    --color-main-black: #000000;
+
+    --color-base-background: #FDFDFD;
+    --color-base-background-dark: #F5F6F8;
+
+    --color-system-success: #00FF00;
+    --color-system-error: #FF0000;
+    --color-system-warning: #FFA500;
+    --color-system-info: #0000FF;
+
+    --color-text: #3E3E3E;
+    --color-subtext: #9A9A9A;
+    --color-paragraph: #292929;
+
+    --navbar-height: 90px;
+
+}
+
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+}
+
+main {
+    margin-top: var(--navbar-height);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0px;
+    box-sizing: border-box;
+}
