@@ -1,4 +1,3 @@
-
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 html {
@@ -174,7 +173,7 @@ input[type="button"] {
   font-weight: 600;
   /* line-height: 38px; */
   letter-spacing: .1rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -274,9 +273,7 @@ button.button-clear:active {
 
 .button.button-icon,
 button.button-icon {
-  padding: 0px;
-  width: 3.5rem;
-  height: 3.5rem;
+  padding: 1rem;
   border: none;
   background-color: var(--color-main-regular);
   color: var(--color-main-white);
@@ -289,9 +286,8 @@ button.button-icon {
 
 .button.button-icon-clear,
 button.button-icon-clear {
-  padding: 0px;
-  width: 3.5rem;
-  height: 3.5rem;
+
+  padding: 1rem;
   border: none;
   background-color: transparent;
   color: var(--color-main-regular);
@@ -301,6 +297,30 @@ button.button-icon-clear {
   cursor: pointer;
   transition: all 0.3s;
 }
+
+.button.button-icon:hover,
+button.button-icon:hover,
+.button.button-icon-clear:hover,
+button.button-icon-clear:hover {
+  text-decoration: none;
+  filter: brightness(0.8);
+  scale: 1;
+}
+
+.button.button-small,
+button.button-small {
+  padding: 0.5rem 2rem;
+  font-size: 1.4rem;
+}
+
+.button.button-small.button-icon,
+button.button-small.button-icon,
+.button.button-small.button-icon-clear,
+button.button-small.button-icon-clear {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
 
 
 /* Forms
