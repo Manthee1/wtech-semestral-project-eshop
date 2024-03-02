@@ -3,6 +3,7 @@
 @import url('./lib/normalize.css');
 @import url('./lib/skeleton.css');
 @import url('./componentes.css');
+@import url('./layout.css');
 
 
 :root {
@@ -29,6 +30,21 @@
 
     --navbar-height: 90px;
 
+    --size-0: 0;
+    --size-1: 0.2rem;
+    --size-2: 0.5rem;
+    --size-3: 1rem;
+    --size-4: 1.5rem;
+    --size-5: 3rem;
+    --size-6: 4rem;
+
+    --size-screen-xs: 480px;
+    --size-screen-sm: 800px;
+    --size-screen-md: 1000px;
+    --size-screen-lg: 1200px;
+    --size-screen-xl: 1400px;
+
+
 }
 
 
@@ -49,7 +65,7 @@ body {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     background-color: white;
 }
 
