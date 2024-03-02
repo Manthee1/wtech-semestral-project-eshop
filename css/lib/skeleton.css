@@ -95,6 +95,7 @@ h6 {
 }
 
 p {
+  font-size: 1.2rem;
   margin-top: 0;
   line-height: 1.5;
   letter-spacing: 0;
@@ -103,16 +104,10 @@ p {
 
 .text-small {
   font-size: 0.8rem;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: var(--color-subtext);
 }
 
 .text-large {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: var(--color-subtext);
+  font-size: 1.8rem;
 }
 
 .text-bold {
@@ -275,6 +270,36 @@ button.button-clear:active {
   /* color: var(--color-main-white); */
   /* background-color: var(--color-main-darker); */
   border-color: var(--color-main-darker);
+}
+
+.button.button-icon,
+button.button-icon {
+  padding: 0px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  background-color: var(--color-main-regular);
+  color: var(--color-main-white);
+  font-size: 1.8rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button.button-icon-clear,
+button.button-icon-clear {
+  padding: 0px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  background-color: transparent;
+  color: var(--color-main-regular);
+  font-size: 1.8rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 
@@ -467,21 +492,21 @@ form {
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.full-width {
+.width-full {
   width: 100%;
   box-sizing: border-box;
 }
 
-.max-full-width {
+.max-width-full {
   max-width: 100%;
   box-sizing: border-box;
 }
 
-.fit-width {
+.width-fit {
   width: fit-content;
 }
 
-.max-fit-width {
+.max-width-fit {
   max-width: fit-content;
 }
 
@@ -497,10 +522,6 @@ form {
 
 .pull-left {
   float: left;
-}
-
-.m-0 {
-  margin: 0;
 }
 
 /* Misc
