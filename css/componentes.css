@@ -14,6 +14,7 @@ nav {
     background-color: var(--color-base-background);
     gap: 2em;
     height: var(--navbar-height);
+    z-index: 1000;
 }
 
 nav>* {
@@ -28,6 +29,18 @@ nav a {
 nav .search-container {
     max-width: 600px;
 }
+nav .search-container input {
+    padding-right: 40px;
+    
+}
+
+nav .search-container button {
+    margin-left: -40px;
+}
+
+nav .search-container label{
+    display: none;
+}
 
 
 
@@ -41,6 +54,75 @@ nav .search-container {
 .logo-container ion-icon {
     margin-right: 10px;
 }
+
+nav .menu-container {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    nav {
+        padding: 0em 2em;
+    }
+    
+    nav .menu-container {
+        display: flex;
+        gap: 1em;
+    }
+    nav .nav-links, nav .logo-container span,nav .account-container a span {
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    nav {
+        gap: 1.3em;
+    }
+    nav ion-icon {
+        font-size: 2rem;
+    }
+    nav a {
+        line-height: 0px;
+    }
+    nav .search-container input, nav .search-container button {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 0%;
+        opacity: 0;
+        padding-right: 40px;
+        z-index: 999;
+        transition: all 0.5s;
+    }
+ 
+    nav .search-container label {
+        display: block;
+        margin:0px;
+        margin-left: auto;
+        line-height: 0px;
+        /* font-size: unset; */
+        cursor: pointer;    
+    }
+
+    nav .search-container input:focus{
+        z-index: 1001;
+        width: calc(100% - 4rem);
+        margin-left: 2rem;
+        opacity: 1;
+    }
+    nav .search-container input:focus + button{
+        z-index: 1001;
+        width: auto;
+        opacity: 1;
+        padding: 0rem 1rem;
+        left: unset;
+        right: 25px;
+  }
+        
+}
+
+
+
 
 
 /* ------------------- */

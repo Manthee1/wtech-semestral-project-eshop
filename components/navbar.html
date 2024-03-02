@@ -7,16 +7,27 @@
         <a href="/">Home</a>
         <a href="/products.html">Products</a>
     </div>
-    <div class="search-container full-width">
-        <input class="full-width" type="text" placeholder="Search">
-        <ion-icon name="search"></ion-icon>
-    </div>
+    <form class="search-container width-full">
+        <label for="search" class="sr-only"><ion-icon name="search"></ion-icon></label>
+        <input class="width-full" type="text" placeholder="Search" id="search" name="search">
+        <button class="button-icon-clear"><ion-icon name="search"></ion-icon></button>
+        
+    </form>
     <div class="account-container flex-auto flex-right gap-2">
-        <ion-icon name="person"></ion-icon>
-        <a href="/login.html">Register/Login</a>
+        <a href="/login.html">
+            <ion-icon name="person"></ion-icon>
+            <span>Register/Login</span>
+        </a>
     </div>
     <div class="cart-container gap-2">
-        <ion-icon name="cart"></ion-icon>
-        <span class="cart-count">0</span>
+        <a href="/cart">
+            <ion-icon name="cart"></ion-icon>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+    <div class="menu-container">
+        <button class="button-icon-clear">
+            <ion-icon name="menu"></ion-icon>
+        </button>
     </div>
 </nav>
