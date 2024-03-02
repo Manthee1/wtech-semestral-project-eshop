@@ -123,6 +123,23 @@ nav .menu-container {
 
 
 
+/* ------------------- */
+/* Footer */
+/* ------------------- */
+
+footer {
+    padding: 2rem 3rem;
+    background-color: var(--color-main-darker);
+    text-align: center;
+    color: var(--color-main-white);
+}
+
+footer span, footer ion-icon{
+    font-size: 2.5rem;
+    color: var(--color-main-white);
+    
+}
+
 
 
 /* ------------------- */
