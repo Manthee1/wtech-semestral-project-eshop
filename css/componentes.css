@@ -12,8 +12,9 @@ nav {
     align-items: center;
     padding: 0em 3em;
     background-color: var(--color-base-background);
-    gap: 2em;
-    height: var(--navbar-height);
+    gap: 1.5em;
+    max-height: var(--navbar-height);
+    height: 100%;
     z-index: 1000;
 }
 
@@ -29,16 +30,17 @@ nav a {
 nav .search-container {
     max-width: 600px;
 }
+
 nav .search-container input {
-    padding-right: 40px;
-    
+    padding-right: 45px;
+
 }
 
 nav .search-container button {
-    margin-left: -40px;
+    margin-left: -45px;
 }
 
-nav .search-container label{
+nav .search-container label {
     display: none;
 }
 
@@ -55,70 +57,155 @@ nav .search-container label{
     margin-right: 10px;
 }
 
-nav .menu-container {
+nav .menu-container,
+nav .menu-container .close-icon {
     display: none;
 }
 
+nav,
+nav * {
+    transition: all 0.5s;
+}
 
 @media screen and (max-width: 800px) {
     nav {
         padding: 0em 2em;
+        width: 100%;
     }
-    
+
     nav .menu-container {
         display: flex;
         gap: 1em;
     }
-    nav .nav-links, nav .logo-container span,nav .account-container a span {
+
+    nav .search-container {
+        max-width: 100%;
+        flex: 1;
+    }
+
+    nav .cart-container,
+    nav .account-container {
+        flex: 0;
+    }
+
+    nav.open {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        max-height: 100vh;
+        padding: 1rem 0rem;
+        gap: 3rem;
+    }
+
+    nav .nav-links,
+    nav .logo-container span,
+    nav .account-container a span,
+    nav.open .account-container a span,
+    nav.open>* {
         display: none;
     }
-    
-}
-@media screen and (max-width: 500px) {
-    nav {
-        gap: 1.3em;
-    }
+
     nav ion-icon {
         font-size: 2rem;
     }
+
+
+    nav.open .logo-container span,
+    nav.open .logo-container {
+        display: flex;
+    }
+
+    nav.open .nav-links {
+        display: flex;
+        flex-flow: column;
+        flex: 0;
+        font-size: 2rem;
+        height: auto;
+        gap: 0rem;
+    }
+
+    nav.open .menu-container {
+        margin-left: auto;
+        display: flex;
+    }
+
+    nav.open .menu-container button {
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+    }
+
+    nav.open .menu-container .close-icon {
+        display: flex;
+        margin: auto;
+    }
+
+    nav.open .menu-container .open-icon {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        gap: 1em;
+    }
+
     nav a {
         line-height: 0px;
     }
-    nav .search-container input, nav .search-container button {
+
+    nav .search-container input,
+    nav .search-container button {
         position: absolute;
         display: block;
-        left: 0;
+        left: -10rem;
         width: 0%;
         opacity: 0;
         padding-right: 40px;
         z-index: 999;
         transition: all 0.5s;
     }
- 
+
     nav .search-container label {
         display: block;
-        margin:0px;
+        margin: 0px;
         margin-left: auto;
         line-height: 0px;
         /* font-size: unset; */
-        cursor: pointer;    
+        cursor: pointer;
     }
 
-    nav .search-container input:focus{
+    nav .search-container:focus {
+        width: 100%;
+    }
+
+    nav .search-container input:focus {
         z-index: 1001;
         width: calc(100% - 4rem);
         margin-left: 2rem;
+        left: 0rem;
         opacity: 1;
     }
-    nav .search-container input:focus + button{
+
+    nav .search-container input:focus+button,
+    nav .search-container button:focus {
         z-index: 1001;
         width: auto;
         opacity: 1;
-        padding: 0rem 1rem;
+        padding: 1rem;
         left: unset;
         right: 25px;
-  }
-        
+        transition: all 0.5s;
+    }
+
+
+    nav.open .nav-links {
+        gap: 2.5rem;
+    }
+
 }
 
 
@@ -134,10 +221,11 @@ footer {
     color: var(--color-main-white);
 }
 
-footer span, footer ion-icon{
+footer span,
+footer ion-icon {
     font-size: 2.5rem;
     color: var(--color-main-white);
-    
+
 }
 
 

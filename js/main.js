@@ -10,3 +10,8 @@ window.addEventListener('load', function () {
     });
 
 });
+
+function toggleNavbar() {
+    const navbar = document.querySelector('nav');
+    navbar.classList.toggle('open');
+}

@@ -7,27 +7,28 @@
         <a href="/">Home</a>
         <a href="/products.html">Products</a>
     </div>
-    <form class="search-container width-full">
-        <label for="search" class="sr-only"><ion-icon name="search"></ion-icon></label>
+    <form class="search-container width-full" action="/products" method="GET">
+        <label for="search" class="sr-only p-2"><ion-icon name="search"></ion-icon></label>
         <input class="width-full" type="text" placeholder="Search" id="search" name="search">
-        <button class="button-icon-clear"><ion-icon name="search"></ion-icon></button>
-        
+        <button type="submit" class="button-icon-clear"><ion-icon name="search"></ion-icon></button>
+
     </form>
     <div class="account-container flex-auto flex-right gap-2">
-        <a href="/login.html">
+        <a href="/login.html" class="button button-icon-clear button-small">
             <ion-icon name="person"></ion-icon>
             <span>Register/Login</span>
         </a>
     </div>
     <div class="cart-container gap-2">
-        <a href="/cart">
+        <a href="/cart" class="button button-icon-clear button-small">
             <ion-icon name="cart"></ion-icon>
             <span class="cart-count">0</span>
         </a>
     </div>
     <div class="menu-container">
-        <button class="button-icon-clear">
-            <ion-icon name="menu"></ion-icon>
+        <button class="button-icon-clear navbar-toggle" onclick="toggleNavbar()">
+            <ion-icon class="open-icon" name="menu"></ion-icon>
+            <ion-icon class="close-icon" name="close"></ion-icon>
         </button>
     </div>
 </nav>
