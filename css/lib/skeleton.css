@@ -12,7 +12,21 @@ body {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: var(--color-text);
   background-color: var(--color-base-background);
+
+
 }
+
+/* Make sure the text anntialiasig is good */
+body,
+input,
+textarea,
+select,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -103,6 +117,14 @@ p {
 
 .text-small {
   font-size: 0.8rem;
+}
+
+.text-medium {
+  font-size: 1.2rem;
+}
+
+.text-intermed {
+  font-size: 1.5rem;
 }
 
 .text-large {
@@ -428,6 +450,46 @@ label>.label-body {
   font-weight: normal;
 }
 
+@media (max-width: 480px) {
+
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
+    max-width: 100%;
+
+  }
+}
+
+
+.tab-button {
+  padding: 0.2rem 0.4rem;
+  color: var(--color-main-medium);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.tab-button:hover {
+  color: var(--color-main-dark);
+  text-decoration: none;
+}
+
+.tab-button.active {
+  font-weight: bold;
+}
+
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -530,6 +592,24 @@ form {
   max-width: fit-content;
 }
 
+.height-full {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.max-height-full {
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.height-fit {
+  height: fit-content;
+}
+
+.max-height-fit {
+  max-height: fit-content;
+}
+
 
 .text-center {
   text-align: center;
@@ -547,10 +627,10 @@ form {
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   border-width: 0;
-  border-top: 1px solid #E1E1E1;
+  border-top: 2px solid var(--color-main-light);
 }
 
 

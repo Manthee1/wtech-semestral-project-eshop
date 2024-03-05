@@ -4,8 +4,10 @@
   justify-content: space-between;
 }
 
-.flex>* {
-  min-width: fit-content;
+@media (min-width: 480px) {
+  .flex>* {
+    min-width: fit-content;
+  }
 }
 
 .flex-row {
@@ -14,6 +16,14 @@
 
 .flex-column {
   flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
 }
 
 .flex-nowrap {
@@ -135,6 +145,10 @@
   flex: 1 1 8.3333333333%;
 }
 
+.gap-auto {
+  gap: auto;
+}
+
 .gap-0 {
   gap: var(--size-0);
 }
@@ -161,6 +175,10 @@
 
 .gap-6 {
   gap: var(--size-6);
+}
+
+.p-auto {
+  padding: auto;
 }
 
 .p-0 {
@@ -191,6 +209,10 @@
   padding: var(--size-6);
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .m-0 {
   margin: var(--size-0);
 }
@@ -217,6 +239,10 @@
 
 .m-6 {
   margin: var(--size-6);
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .mt-0 {
@@ -247,6 +273,10 @@
   margin-top: var(--size-6);
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .ml-0 {
   margin-left: var(--size-0);
 }
@@ -273,6 +303,10 @@
 
 .ml-6 {
   margin-left: var(--size-6);
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 .mr-0 {
@@ -303,6 +337,10 @@
   margin-right: var(--size-6);
 }
 
+.mb-auto {
+  margin-bottom: auto;
+}
+
 .mb-0 {
   margin-bottom: var(--size-0);
 }
@@ -329,6 +367,11 @@
 
 .mb-6 {
   margin-bottom: var(--size-6);
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mx-0 {
@@ -364,6 +407,11 @@
 .mx-6 {
   margin-left: var(--size-6);
   margin-right: var(--size-6);
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .my-0 {
