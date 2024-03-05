@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .auth-form-wrapper {
+            height: calc(100vh - var(--navbar-height));
+        }
+
+        @media (max-width: 480px) {
+            .auth-form-wrapper {
+                height: auto;
+            }
+
+            .auth-form-wrapper .form-container {
+                margin: 0 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <component>navbar</component>
+    <main>
+        <section class="flex-container width-full w-auto auth-form-wrapper">
+            <div class="form-container m-auto">
+                <!-- <form action="login.php" method="post"> -->
+                <div class="flex flex-row gap-2 mb-3">
+                    <h5 class="m-0 mr-auto text-bold ">Login</h5>
+                    <a id="registerSwitchButton" class="tab-button my-auto" onclick="switchTo('register')">Register</a>
+                    <a id="loginSwitchButton" class="tab-button my-auto active" onclick="switchTo('login')">Login</a>
+                </div>
+                <hr>
+                <br>
+                <div class="flex flex-column gap-4">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <input type="password" name="repeat_password" id="repeat_password" placeholder="Confirm Password"
+                        required>
+                    <button class="button button-filled" type="submit">Login</button>
+                </div>
+                <!-- </form> -->
+            </div>
+        </section>
+    </main>
+
+    <component>footer</component>
+    <script>
+        function switchTo(type) {
+            if (type === 'login') {
+                document.getElementById('repeat_password').style.display = 'none';
+                document.getElementById('registerSwitchButton').classList.remove('active');
+                document.getElementById('loginSwitchButton').classList.add('active');
+            } else {
+                document.getElementById('repeat_password').style.display = 'block';
+                document.getElementById('loginSwitchButton').classList.remove('active');
+                document.getElementById('registerSwitchButton').classList.add('active');
+            }
+        }
+        window.onload = function () {
+            switchTo('login');
+        }
+
+
+    </script>
+</body>
+
+</html>
