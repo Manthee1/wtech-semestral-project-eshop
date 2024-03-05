@@ -1,5 +1,5 @@
 <nav>
-    <a class="logo-container" href="/">
+    <a class="logo-container flex gap-2 flex-nowrap" href="/">
         <ion-icon name="heart"></ion-icon>
         <span>rideout</span>
     </a>
@@ -7,22 +7,22 @@
         <a href="/">Home</a>
         <a href="/products.html">Products</a>
     </div>
-    <form class="search-container width-full" action="/products" method="GET">
+    <form class="search-container width-full" action="/products.html" method="GET">
         <label for="search" class="sr-only p-2"><ion-icon name="search"></ion-icon></label>
-        <input class="width-full" type="text" placeholder="Search" id="search" name="search">
+        <input class="width-full" type="text" placeholder="Search Products" id="search" name="search">
         <button type="submit" class="button-icon-clear"><ion-icon name="search"></ion-icon></button>
 
     </form>
-    <div class="account-container flex-auto flex-right gap-2">
-        <a href="/login.html" class="button button-icon-clear button-small">
+    <div class="account-container flex-auto flex-right">
+        <a href="/login.html" class="button button-icon-clear button-small flex flex-nowrap gap-2">
             <ion-icon name="person"></ion-icon>
-            <span>Register/Login</span>
+            <span class="text-medium">Login</span>
         </a>
     </div>
-    <div class="cart-container gap-2">
+    <div class="cart-container">
         <a href="/cart" class="button button-icon-clear button-small">
             <ion-icon name="cart"></ion-icon>
-            <span class="cart-count">0</span>
+            <span class="cart-count">12</span>
         </a>
     </div>
     <div class="menu-container">
