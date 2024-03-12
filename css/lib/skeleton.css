@@ -592,6 +592,14 @@ form {
   max-width: fit-content;
 }
 
+.width-min {
+  width: min-content;
+}
+
+.max-width-min {
+  max-width: min-content;
+}
+
 .height-full {
   height: 100%;
   box-sizing: border-box;
@@ -633,6 +641,14 @@ hr {
   border-top: 2px solid var(--color-main-light);
 }
 
+
+/* Prototypeing */
+img.scaffhold {
+
+  border: 2px solid var(--color-main-regular);
+
+
+}
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
