@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+    <style>
+        .products {
+            background-color: var(--color-base-background);
+        }
+
+        .filter-container {
+            padding: 5rem 6rem;
+        }
+
+
+        .filter-container .checkbox-section div label {
+            margin: 0px;
+        }
+
+        .order-container li+li::before {
+            content: "|";
+            padding: 0 0.5rem;
+            color: var(--color-main-regular);
+        }
+
+        .black-background {
+            background-color: black;
+            color: white;
+        }
+
+        .product-list-container img {
+            height: 120px;
+            width: 160px;
+            object-fit: cover;
+        }
+
+        .product-item {
+            min-width: 800px;
+            max-width: 1000px;
+        }
+
+        .text-container {
+            max-width: 200px;
+        }
+
+        .relatiove-position {
+            position: relative;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+        }
+    </style>
+
+
+    <component>navbar</component>
+    <main>
+        <div id="breadcrumbs" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">cart</li>
+            </ol>
+        </div>
+        <section id="products" class="flex flex-column flex-wrap">
+            <div class="flex flex-column gap-1 py-5 flex-auto">
+                <div class="product-list-container flex flex-column flex-wrap gap-1 flex-top max-width-min">
+                    <ol>
+                        <div class="flex flex-row p-6">
+                            <div class="flex flex-row product-item">
+                                <img class="scaffhold px-6" src="./img/car1.jpg">
+                                <div class="flex flex-column text-container">
+                                    <h5 class="product-card-title">Car 1</h5>
+                                    <div class="product-card-footer">
+                                        <span class="product-card-price">100,000 €</span>
+                                    </div>
+                                    <p class="product-card-paragraph text-container">Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing
+                                        elit.</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex flex-center gap-2">
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-back-circle" role="img"></ion-icon>
+                                        </button>
+                                        <span class="product-card-price">2</span>
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-forward-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-center relatiove-position">
+                                    <button type="button" class="button-icon-clear close-icon">
+                                        <ion-icon name="close-outline" role="img"></ion-icon>
+                                    </button>
+                                    <span class="product-card-price">200,000 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row p-6">
+                            <div class="flex flex-row product-item">
+                                <img class="scaffhold px-6" src="./img/car1.jpg">
+                                <div class="flex flex-column text-container">
+                                    <h5 class="product-card-title">Car 1</h5>
+                                    <div class="product-card-footer">
+                                        <span class="product-card-price">100,000 €</span>
+                                    </div>
+                                    <p class="product-card-paragraph text-container">Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing
+                                        elit.</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex flex-center gap-2">
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-back-circle" role="img"></ion-icon>
+                                        </button>
+                                        <span class="product-card-price">2</span>
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-forward-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-center relatiove-position">
+                                    <button type="button" class="button-icon-clear close-icon">
+                                        <ion-icon name="close-outline" role="img"></ion-icon>
+                                    </button>
+                                    <span class="product-card-price">200,000 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row p-6">
+                            <div class="flex flex-row product-item">
+                                <img class="scaffhold px-6" src="./img/car1.jpg">
+                                <div class="flex flex-column text-container">
+                                    <h5 class="product-card-title">Car 1</h5>
+                                    <div class="product-card-footer">
+                                        <span class="product-card-price">100,000 €</span>
+                                    </div>
+                                    <p class="product-card-paragraph text-container">Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing
+                                        elit.</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex flex-center gap-2">
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-back-circle" role="img"></ion-icon>
+                                        </button>
+                                        <span class="product-card-price">2</span>
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-forward-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-center relatiove-position">
+                                    <button type="button" class="button-icon-clear close-icon">
+                                        <ion-icon name="close-outline" role="img"></ion-icon>
+                                    </button>
+                                    <span class="product-card-price">200,000 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row p-6">
+                            <div class="flex flex-row product-item">
+                                <img class="scaffhold px-6" src="./img/car1.jpg">
+                                <div class="flex flex-column text-container">
+                                    <h5 class="product-card-title">Car 1</h5>
+                                    <div class="product-card-footer">
+                                        <span class="product-card-price">100,000 €</span>
+                                    </div>
+                                    <p class="product-card-paragraph text-container">Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing
+                                        elit.</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex flex-center gap-2">
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-back-circle" role="img"></ion-icon>
+                                        </button>
+                                        <span class="product-card-price">2</span>
+                                        <button type="button" class="button-icon-clear">
+                                            <ion-icon name="chevron-forward-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-center relatiove-position">
+                                    <button type="button" class="button-icon-clear close-icon">
+                                        <ion-icon name="close-outline" role="img"></ion-icon>
+                                    </button>
+                                    <span class="product-card-price">200,000 €</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ol>
+                    <div class="flex flex-column flex-center product-item ml-6 mb-6">
+                        <div class="flex flex-row product-item ml-6">
+                            <div class="flex flex-left">
+                                <p class="product-card-paragraph">*shipping is free</p>
+                            </div>
+                            <div class="flex flex-right flex-row gap-2 mr-6">
+                                <h5 class="product-card-title">TOTAL</h5>
+                                <h3 class="product-card-title"><strong>100,000 €</strong></h3>
+                            </div>
+                        </div>
+                        <div class="flex flex-row product-item ml-6">
+                            <div class="flex flex-left">
+                                <a href="/products.html"><u>continue shopping</u></a>
+                            </div>
+                            <div class="flex flex-right flex-row gap-2 mr-6">
+                                <button type="button" class="button black-background">proceed to chekout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <component>footer</component>
+    </main>
+</body>
+
+</html>
