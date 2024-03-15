@@ -76,4 +76,5 @@ main {
     overflow: auto;
     padding: 0px;
     box-sizing: border-box;
+    min-height: calc(100vh - var(--navbar-height));
 }
