@@ -24,9 +24,22 @@
         }
 
         .product-list-container img {
-            height: 120px;
-            width: 160px;
-            object-fit: cover;
+            object-fit: contain;
+        }
+
+        .product-item {
+            max-height: 220px;
+            overflow: hidden;
+        }
+
+        .product-list-container .text-container {
+            max-width: 350px;
+            margin-left: 0px;
+
+        }
+
+        .product-price-total {
+            width: 15ch;
         }
 
         .close-icon {
@@ -46,49 +59,73 @@
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </div>
-        <section id="products" class="flex flex-container p-5">
-            <ul class="product-list-container position-relative">
-                <li class="flex flex-row product-item gap-5">
-                    <img class="scaffhold" src="./img/car1.jpg">
-                    <div class="text-container flex flex-column flex-auto">
+        <section id="products" class="flex flex-container p-5 my-5 gap-5">
+            <ul class="product-list-container flex flex-column gap-5">
+                <li class="product-item flex flex-row flex-left gap-5 position-relative">
+                    <img src="./img/car1.jpg">
+                    <div class="text-container flex flex-column flex-auto flex-top-left">
                         <h5 class="product-name">Acura MDX 2011</h5>
                         <span class="product-price">100,000 €</span>
-                        <p class="product-description">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing
-                            elit.</p>
+                        <p class="product-description">A very good car, with a very good engine and a very good
+                            interior.</p>
                     </div>
-                    <div class="flex">
+                    <div class="flex product-quantity-container flex-auto m-auto flex-center">
                         <div class="flex flex-center gap-2">
                             <button type="button" class="button-icon-clear">
                                 <ion-icon name="chevron-back-circle" role="img"></ion-icon>
                             </button>
-                            <span class="product-amount">2</span>
+                            <span class="product-quantity">2</span>
                             <button type="button" class="button-icon-clear">
                                 <ion-icon name="chevron-forward-circle"></ion-icon>
                             </button>
                         </div>
                     </div>
-                    <span class="product-price-total text-bold text-large m-auto">200,000 €</span>
+                    <span class="product-price-total text-bold text-large text-right">200,000 €</span>
 
                     <button type="button" class="button-icon-clear close-icon">
                         <ion-icon name="close-outline" role="img" class="icon-large"></ion-icon>
                     </button>
                 </li>
+                <li class="product-item flex flex-row flex-left gap-5 position-relative">
+                    <img src="./img/car2.jpg">
+                    <div class="text-container flex flex-column flex-auto flex-top-left">
+                        <h5 class="product-name">Jeep Wrangler 2017</h5>
+                        <span class="product-price mb-3">500,000 €</span>
+                        <p p="product-description">The Jeep Wrangler is a a prime example of a luxury car. It is so
+                            expensive that you can't afford it! It's engine is so powerful that you can't handle it!
+                            It's so
+                            awesome that you can't even imagine it! Like squids, they are so cool. And so is this car.
+                            Buy it now and loose all your money!</p>
+                    </div>
+                    <div class="flex product-quantity-container flex-auto m-auto flex-center">
+                        <div class="flex flex-center gap-2">
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="chevron-back-circle" role="img"></ion-icon>
+                            </button>
+                            <span class="product-quantity">3</span>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="chevron-forward-circle"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <span class="product-price-total text-bold text-large text-right">1,500,000 €</span>
+
+                    <button type="button" class="button-icon-clear close-icon">
+                        <ion-icon name="close-outline" role="img" class="icon-large"></ion-icon>
+                    </button>
+                </li>
+
             </ul>
 
-            <div class="flex flex-row flex-left gap-3 p-5">
+            <div class="flex flex-row flex-left gap-3">
                 <span class="text-subtext text-medium m-auto flex-auto">*shipping is free</span>
                 <h6 class="m-auto">TOTAL</h6>
-                <h5 class="m-auto text-bold">200,000 €</h5>
+                <h5 class="m-auto text-bold">1,700,000 €</h5>
             </div>
-
-            <div class="flex flex-row ">
-                <div class="flex flex-left">
-                    <a href="/products.html"><u>Continue shopping</u></a>
-                </div>
-                <div class="flex flex-right flex-row gap-2 mr-6">
-                    <button type="button" class="button-filled">Proceed to chekout</button>
-                </div>
+            <hr>
+            <div class="flex flex-row p-3">
+                <a href="/products.html"><u>Continue shopping</u></a>
+                <button type="button" class="button-filled">Proceed to chekout</button>
             </div>
         </section>
     </main>

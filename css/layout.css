@@ -4,11 +4,11 @@
   justify-content: space-between;
 }
 
-@media (min-width: 480px) {
+/* @media (min-width: 480px) {
   .flex>* {
     min-width: fit-content;
   }
-}
+} */
 
 .flex-row {
   flex-direction: row;

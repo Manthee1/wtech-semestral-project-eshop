@@ -284,4 +284,6 @@ footer ion-icon {
     content: "———";
     padding: 0 0.5rem;
     color: var(--color-main-regular);
+    font-family: monospace;
+    font-weight: 900;
 }

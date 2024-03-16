@@ -644,6 +644,7 @@ hr {
   margin-bottom: 0rem;
   border-width: 0;
   border-top: 2px solid var(--color-main-light);
+  width: 100%;
 }
 
 
@@ -653,6 +654,10 @@ img.scaffhold {
   border: 2px solid var(--color-main-regular);
   min-width: 280px;
   min-height: 210px;
+}
+
+.circle {
+  border-radius: 50%;
 }
 
 .icon-large {
