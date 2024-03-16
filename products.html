@@ -43,9 +43,20 @@
 
 
         .product-list-container img {
-            height: 240px;
-            width: 320px;
+            min-height: 240px;
+            min-width: 320px;
+            width: 100%;
             object-fit: cover;
+        }
+
+        .product-list-container {
+            padding: 0 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+
+        .product-card {
+            flex: auto;
         }
     </style>
 
@@ -159,8 +170,8 @@
                         </ol>
                     </div>
                 </div>
-                <div class="product-list-container flex flex-row flex-wrap gap-5 flex-top max-width-min">
-                    <div class="product-card">
+                <ul class="product-list-container flex flex-row flex-wrap gap-5 flex-top-left w-100">
+                    <li class="product-card">
                         <img class="scaffhold" src="./img/car1.jpg">
                         <div class="product-card-content">
                             <h5 class="product-card-title">Acura MDX 2011</h5>
@@ -170,8 +181,8 @@
                                 <span class="product-card-price">100,000 €</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
+                    </li>
+                    <li class="product-card">
                         <img class="scaffhold" src="./img/car1.jpg">
                         <div class="product-card-content">
                             <h5 class="product-card-title">Acura MDX 2011</h5>
@@ -181,8 +192,8 @@
                                 <span class="product-card-price">100,000 €</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
+                    </li>
+                    <li class="product-card">
                         <img class="scaffhold" src="./img/car1.jpg">
                         <div class="product-card-content">
                             <h5 class="product-card-title">Acura MDX 2011</h5>
@@ -192,8 +203,8 @@
                                 <span class="product-card-price">100,000 €</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
+                    </li>
+                    <li class="product-card">
                         <img class="scaffhold" src="./img/car1.jpg">
                         <div class="product-card-content">
                             <h5 class="product-card-title">Acura MDX 2011</h5>
@@ -203,8 +214,8 @@
                                 <span class="product-card-price">100,000 €</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
+                    </li>
+                    <li class="product-card">
                         <img class="scaffhold" src="./img/car1.jpg">
                         <div class="product-card-content">
                             <h5 class="product-card-title">Acura MDX 2011</h5>
@@ -214,8 +225,8 @@
                                 <span class="product-card-price">100,000 €</span>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
