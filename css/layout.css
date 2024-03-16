@@ -93,6 +93,22 @@
   justify-content: center;
 }
 
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-static {
+  position: static;
+}
+
 .flex-auto {
   flex: 1 1 auto;
 }
@@ -451,4 +467,4 @@
 .my-6 {
   margin-top: var(--size-6);
   margin-bottom: var(--size-6);
-} 
+}
