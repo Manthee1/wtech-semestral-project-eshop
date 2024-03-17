@@ -136,6 +136,10 @@ p {
   font-size: 1.8rem;
 }
 
+.text-extralarge {
+  font-size: 2.4rem;
+}
+
 .text-bold {
   font-weight: 600;
 }
