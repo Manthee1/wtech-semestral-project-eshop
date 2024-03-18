@@ -37,7 +37,7 @@
             <div class="form-container m-auto">
                 <!-- <form action="login.php" method="post"> -->
                 <div class="flex flex-row gap-2 mb-3">
-                    <h5 class="m-0 mr-auto text-bold ">Login</h5>
+                    <h5 id="auth-form-title" class="m-0 mr-auto text-bold">Login</h5>
                     <a id="registerSwitchButton" class="tab-button my-auto" onclick="switchTo('register')">Register</a>
                     <a id="loginSwitchButton" class="tab-button my-auto active" onclick="switchTo('login')">Login</a>
                 </div>
@@ -57,20 +57,25 @@
 
     <component>footer</component>
     <script>
+        const formContainerEl = document.querySelector('.form-container');
         function switchTo(type) {
             if (type === 'login') {
-                document.getElementById('repeat_password').style.display = 'none';
-                document.getElementById('registerSwitchButton').classList.remove('active');
-                document.getElementById('loginSwitchButton').classList.add('active');
+                formContainerEl.querySelector('#repeat_password').style.display = 'none';
+                formContainerEl.querySelector('#registerSwitchButton').classList.remove('active');
+                formContainerEl.querySelector('#loginSwitchButton').classList.add('active');
+                formContainerEl.querySelector('#auth-form-title').innerText = 'Login';
+                formContainerEl.querySelector('button').innerText = 'Login';
             } else {
-                document.getElementById('repeat_password').style.display = 'block';
-                document.getElementById('loginSwitchButton').classList.remove('active');
-                document.getElementById('registerSwitchButton').classList.add('active');
+                formContainerEl.querySelector('#repeat_password').style.display = 'block';
+                formContainerEl.querySelector('#loginSwitchButton').classList.remove('active');
+                formContainerEl.querySelector('#registerSwitchButton').classList.add('active');
+                formContainerEl.querySelector('#auth-form-title').innerText = 'Register';
+                formContainerEl.querySelector('button').innerText = 'Register';
             }
         }
-        window.onload = function () {
+        window.addEventListener('load', function () {
             switchTo('login');
-        }
+        });
 
 
     </script>
