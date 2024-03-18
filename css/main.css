@@ -78,8 +78,8 @@ body {
 main {
     margin-top: var(--navbar-height);
     width: 100%;
-    min-height: 100%;
-    overflow: auto;
+    height: auto;
+    overflow: visible;
     padding: 0px;
     box-sizing: border-box;
     min-height: calc(100vh - var(--navbar-height));

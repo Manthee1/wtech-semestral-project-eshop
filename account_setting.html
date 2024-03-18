@@ -36,10 +36,14 @@
 
         @media (max-width: 480px) {
             #account-settings {
-                padding: 0 2rem;
+                padding: 2rem;
             }
 
-            input {
+            #account-settings input {
+                width: 100%;
+            }
+
+            #account-settings button {
                 width: 100%;
             }
         }
@@ -103,7 +107,7 @@
                     <input class="flex-1" type="text" name="cvv" id="cvv" placeholder="cvv">
                 </div>
                 <hr>
-                <div class="flex flex-12 w-100">
+                <div class="flex flex-12 width-full">
                     <button class="button button-filled ml-auto">Save</button>
                 </div>
             </div>
