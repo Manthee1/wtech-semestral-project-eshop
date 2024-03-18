@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="lib/mato-gallery/mato-gallery.css">
+    </link>
+    <script src="lib/mato-gallery/mato-gallery.js"></script>
+
+    <style>
+        #product-detail {
+            height: calc(100vh - var(--navbar-height));
+
+        }
+
+        .product-info-container {
+            padding: 0px 100px;
+            max-width: 600px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <component>navbar</component>
+    <main>
+        <section id="product-detail" class="flex flex-row flex-nowrap flex-center width-full height-full">
+            <div id="product-images-container" class="flex-auto flex flex-center p-5">
+                <img src="img/car1.jpg" alt="product image" class="product-image">
+                <img src="img/car2.jpg" alt="product image" class="product-image">
+                <img src="img/car1.jpg" alt="product image" class="product-image">
+                <img src="img/car2.jpg" alt="product image" class="product-image">
+                <img src="img/car1.jpg" alt="product image" class="product-image">
+                <img src="img/car2.jpg" alt="product image" class="product-image">
+                <img src="img/car2.jpg" alt="product image" class="product-image">
+            </div>
+            <div class="product-info-container flex flex-column flex-top-left p-6 gap-5">
+                <div>
+                    <h1 class="product-title m-0 font-regular">Acura MDX</h1>
+                    <span>2011 SUV</span>
+                </div>
+                <h5 class="product-price font-bold">1,463 €</h5>
+                <div class="product-description">
+                    <label class="product-description-label font-bold">D E S C R I P T I O N</label>
+                    <p class="product-description ml-3">A simple description of this car. It's a car. It's a good car.
+                        It's a
+                        car that you want to buy. It's a car that you want to buy now. It's a car that you want to
+                        buy
+                        now and drive. It's a car that you want to buy now and drive fast. It's a car that you want
+                        to
+                        buy now and drive fast and far. It's a car that you want to buy now and drive fast and far
+                        and
+                        never stop driving. It's a car that you want to buy now and drive fast and far
+                </div>
+                <div class="product-details">
+                    <label class="product-details-label font-bold">D E T A I L S</label>
+                    <table class="product-details-table compact text-medium">
+                        <tr>
+                            <td>Brand</td>
+                            <td>Acura</td>
+                        </tr>
+                        <tr>
+                            <td>Model</td>
+                            <td>MDX</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>2011</td>
+                        </tr>
+                        <tr>
+                            <td>Body Type</td>
+                            <td>SUV</td>
+                        </tr>
+                        <tr>
+                            <td>Horse Power</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <td>Engine Type</td>
+                            <td>V6</td>
+                        </tr>
+                        <tr>
+                            <td>Dimensions</td>
+                            <td>100x100x100</td>
+                        </tr>
+                        <tr>
+                            <td>Gas Milage</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Drivetrain</td>
+                            <td>AWD</td>
+                        </tr>
+                        <tr>
+                            <td>Passanger Capacity</td>
+                            <td>7</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class=" button button-filled width-full">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <component>footer</component>
+
+</body>
+<script>
+    window.addEventListener('load', function () {
+        new MatoGallery('#product-images-container');
+    });
+</script>
+
+</html>
