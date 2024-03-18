@@ -1,0 +1,166 @@
+.mato-gallery .hello {
+    opacity: 1 !important;
+}
+
+.mato-gallery .full {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.mato-gallery .full .content {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    cursor: default;
+}
+
+.mato-gallery .full .content>* {
+    max-height: 98vh;
+    left: 50%;
+    transform: translate3d(0, 0, 0);
+    animation: zoomin 1s ease;
+    max-width: 100%;
+    max-height: 95vh;
+    margin: auto;
+    cursor: default;
+
+}
+
+.mato-gallery .byebye {
+    opacity: 0;
+}
+
+.mato-gallery .byebye:hover {
+    transform: scale(0.2) !important;
+}
+
+.mato-gallery {
+    display: grid;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 8px;
+}
+
+.mato-gallery .content>* {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: all 1.5s ease;
+}
+
+.mato-gallery:not(.full) .content>*:hover {}
+
+.mato-gallery .content {
+    padding: 4px;
+}
+
+.mato-gallery .gallery-item {
+    transition: grid-row-start 300ms linear;
+    transition: transform 300ms ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.mato-gallery:not(.full) .gallery-item:hover {
+    transform: scale(1.025);
+}
+
+.mato-gallery .gallery-back,
+.mato-gallery .gallery-next {
+    display: none;
+    position: fixed;
+    top: 0px;
+    padding: 40px;
+    height: 100vh;
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0.5;
+    font-weight: 200;
+    text-decoration: none;
+    z-index: 1001;
+    cursor: pointer;
+
+}
+
+.mato-gallery .gallery-back i,
+.mato-gallery .gallery-next i {
+    margin: auto;
+}
+
+.mato-gallery .gallery-back:hover,
+.mato-gallery .gallery-next:hover {
+    opacity: 1;
+}
+
+
+.mato-gallery .gallery-back {
+    left: 0;
+}
+
+.mato-gallery .gallery-next {
+    right: 0;
+}
+
+.mato-gallery.full .gallery-back,
+.mato-gallery.full .gallery-next {
+    display: flex;
+}
+
+
+@media (max-width: 600px) {
+    .mato-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+}
+
+@media (max-width: 400px) {
+    .mato-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+
+@-moz-keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-o-keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
