@@ -500,6 +500,23 @@ label>.label-body {
 }
 
 
+.tag-bubble {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  color: var(--color-main-medium);
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: var(--color-main-light);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  width: fit-content;
+  transition: all 0.3s;
+
+}
+
+
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
