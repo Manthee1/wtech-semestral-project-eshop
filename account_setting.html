@@ -10,17 +10,37 @@
     <script src="js/main.js"></script>
 
     <style>
-        .auth-form-wrapper {
-            height: calc(100vh - var(--navbar-height));
+        #account-settings {
+            max-width: 1200px;
+        }
+
+        .settings-section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            margin-top: 0.5rem;
+            width: 100%;
+            gap: 2rem;
+            --gap: 2rem;
+        }
+
+        .settings-section input {
+            display: flex;
+            min-width: 300px;
+        }
+
+        .settings-section .setting-section-title {
+            margin: 0rem;
         }
 
         @media (max-width: 480px) {
-            .auth-form-wrapper {
-                height: auto;
+            #account-settings {
+                padding: 0 2rem;
             }
 
-            .auth-form-wrapper .form-container {
-                margin: 0 2rem;
+            input {
+                width: 100%;
             }
         }
     </style>
@@ -36,101 +56,56 @@
         <div id="breadcrumbs" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="/account_setting.html">account
-                        settings</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/account_setting.html">Account
+                        Settings</a></li>
             </ol>
         </div>
-        <section class="flex-container width-full w-auto auth-form-wrapper">
-            <div class="flex-column flex-top">
-                <h3>Basic</h3>
+        <section id="account-settings" class="flex-container w-auto p-5">
+            <h1 class="text-extralarge">Account Settings</h1>
+            <div class="flex form-container mb-6 gap-5">
+                <div class="settings-section">
+                    <h5 class="setting-section-title">Basic</h5>
+                    <hr>
+                    <input class="flex-6" type="text" name="firstName" id="firstName" placeholder="First name" required>
+                    <input class="flex-6" type="text" name="lastName" id="lastName" placeholder="Last name" required>
+                    <input class="flex-6" type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+                    <input class="flex-6" type="email" name="email" id="email" placeholder="email" required>
+                </div>
+
+                <div class="settings-section">
+                    <h5 class="setting-section-title">Password</h5>
+                    <hr>
+                    <input class="flex-4" type="password" name="currentPassword" id="currentPassword"
+                        placeholder="Current password" required>
+                    <input class="flex-4" type="password" name="newPassword" id="newPassword" placeholder="New password"
+                        required>
+                    <input class="flex-4" type="password" name="repeatNewPassword" id="repeatNewPassword"
+                        placeholder="Repeat new password" required>
+                </div>
+
+                <div class="settings-section">
+                    <h5 class="setting-section-title">Delivery</h5>
+                    <hr>
+                    <input class="flex-12" type="text" name="streetAddress" id="streetAddress"
+                        placeholder="Street address">
+                    <input class="flex-4" type="text" name="City" id="city" placeholder="City">
+                    <input class="flex-4" type="number" name="postalCode" id="postalCode" placeholder="PostalCode">
+                    <input class="flex-4" type="text" name="Country" id="Country" placeholder="Country">
+                </div>
+
+                <div class="settings-section">
+                    <h5 class="setting-section-title">Payment</h5>
+                    <hr>
+                    <input class="flex-12" type="text" name="nameOnCard" id="nameOnCard" placeholder="Name on card">
+                    <input class="flex-8" type="text" name="cardNumber" id="cardNumber" placeholder="Card number">
+                    <input class="flex-3" type="text" name="expirationDate" id="expirationDate"
+                        placeholder="Expiration date">
+                    <input class="flex-1" type="text" name="cvv" id="cvv" placeholder="cvv">
+                </div>
                 <hr>
-                <br>
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-5">
-                        <input class="width-full" type="text" name="firstName" id="firstName" placeholder="First name"
-                            required>
-                    </div>
-                    <div class="flex flex-5">
-                        <input class="width-full" type="text" name="lastName" id="lastName" placeholder="Last name"
-                            required>
-                    </div>
+                <div class="flex flex-12 w-100">
+                    <button class="button button-filled ml-auto">Save</button>
                 </div>
-                <br>
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-5">
-                        <input class="width-full" type="tel" name="phoneNumber" id="phoneNumber"
-                            placeholder="Phone Number">
-                    </div>
-                    <div class="flex flex-5">
-                        <input class="width-full" type="email" name="email" id="email" placeholder="email" required>
-                    </div>
-                </div>
-                <br>
-                <h3>Password</h3>
-                <hr>
-                <br>
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-3">
-                        <input class="width-full" type="password" name="currentPassword" id="currentPassword"
-                            placeholder="Current password" required>
-                    </div>
-                    <div class="flex flex-3">
-                        <input class="width-full" type="password" name="newPassword" id="newPassword"
-                            placeholder="New password" required>
-                    </div>
-                    <div class="flex flex-3">
-                        <input class="width-full" type="password" name="repeatNewPassword" id="repeatNewPassword"
-                            placeholder="Repeat new password" required>
-                    </div>
-                </div>
-                <br>
-                <h3>Deliveri</h3>
-                <hr>
-                <br>
-                <div class="flex">
-                    <div class="flex flex-12">
-                        <input class="width-full" type="text" name="streetAddress" id="streetAddress"
-                            placeholder="Street address">
-                    </div>
-                </div>
-                <br>
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-3">
-                        <input class="width-full" type="text" name="City" id="city" placeholder="City">
-                    </div>
-                    <div class="flex flex-3">
-                        <input class="width-full" type="number" name="postalCode" id="postalCode"
-                            placeholder="PostalCode">
-                    </div>
-                    <div class="flex flex-3">
-                        <input class="width-full" type="text" name="Country" id="Country" placeholder="Country">
-                    </div>
-                </div>
-                <br>
-                <h3>Payment</h3>
-                <hr>
-                <br>
-                <div class="flex">
-                    <div class="flex flex-5">
-                        <input class="width-full" type="text" name="nameOnCard" id="nameOnCard"
-                            placeholder="Name on card">
-                    </div>
-                </div>
-                <br>
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-7">
-                        <input class="width-full" type="text" name="cardNumber" id="cardNumber"
-                            placeholder="Card number">
-                    </div>
-                    <div class="flex flex-2">
-                        <input class="width-full" type="text" name="expirationDate" id="expirationDate"
-                            placeholder="Expiration date">
-                    </div>
-                    <div class="flex flex-1">
-                        <input class="width-full" type="text" name="cvv" id="cvv" placeholder="cvv">
-                    </div>
-                </div>
-            </div>
             </div>
         </section>
     </main>
