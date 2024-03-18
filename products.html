@@ -19,6 +19,10 @@
         }
 
 
+        .filter-container {
+            background-color: var(--color-base-background);
+        }
+
         .filter-container .input-section input {
             max-width: 15rem;
             /* min-width: 2rem; */
@@ -35,6 +39,12 @@
         .filter-container .filter-header button,
         .product-options .product-header button {
             display: none;
+        }
+
+        .products-container {
+            border-top: 3px solid var(--color-main-regular);
+            border-left: 3px solid var(--color-main-regular);
+
         }
 
         .product-options li+li::before {
@@ -148,6 +158,7 @@
 
             .products-container {
                 padding: 2rem;
+                border: none;
             }
 
             .product-list-container {
@@ -174,11 +185,11 @@
             </ol>
             <br>
         </div>
-        <section id="products" class="flex flex-row flex-nowrap flex-top gap-3 width-full">
+        <section id="products" class="flex flex-row flex-nowrap flex-top width-full">
             <div class="filter-container p-5">
                 <!-- header -->
                 <div class="flex flex-row gap-4 filter-header">
-                    <span class="text-extralarge text-bold">Filter</span>
+                    <span class="text-extralarge font-bold">Filter</span>
                     <button class="button-icon-clear"
                         onclick="document.querySelector('#products').classList.toggle('filter-container-expanded')">
                         <ion-icon name="close"></ion-icon>
@@ -263,7 +274,7 @@
                 </form>
 
             </div>
-            <div class="products-container flex flex-column gap-5 py-5 px-4 width-full">
+            <div class="products-container flex flex-column gap-5 p-5 width-full">
                 <div class="product-options flex flex-column gap-5">
                     <div class="product-header">
                         <h1 class="text-extralarge flex m-0">
