@@ -11,9 +11,14 @@
     <script src="js/main.js"></script>
 
     <style>
+        .outline {
+            border: 2px solid black;
+            padding: 30px;
+        }
+
         .order-summary {
             height: calc(100vh - var(--navbar-height));
-            max-width: 1200px;
+            max-width: 480px;
         }
 
         @media (max-width: 480px) {
@@ -32,12 +37,11 @@
     <component>navbar</component>
     <main>
         <section class="flex-container width-full w-auto order-summary m-auto">
-            <div class="container"></div>
-            <h1 class="text-extralarge"></h1>
-            <p>Thank you for your purchase!</p>
-            <p>Your order number is: 123456789</p>
-            <a href="index.html" class="button button-filled">Continue Shopping</a>
-
+            <div class="container flex flex-column outline gap-3">
+                <h1 class="text-extralarge">Thank you for your purchase!</h1>
+                <h1 class="text-extralarge">Your order number is: 123456789</h1>
+                <a href="index.html" class="button button-filled">Continue Shopping</a>
+            </div>
         </section>
     </main>
 
