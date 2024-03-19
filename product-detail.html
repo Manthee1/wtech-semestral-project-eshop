@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rideaut</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.0/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.0/css/splide.min.css"
+        integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="lib/mato-gallery/mato-gallery.css">
     </link>
@@ -15,13 +21,58 @@
 
     <style>
         #product-detail {
-            height: calc(100vh - var(--navbar-height));
+            min-height: calc(100vh - var(--navbar-height));
 
         }
 
         .product-info-container {
-            padding: 0px 100px;
+            padding: 5rem 100px;
             max-width: 600px;
+            min-width: 500px;
+            background-color: var(--color-base-background);
+        }
+
+        .splide__slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: contain;
+        }
+
+        .splide__pagination__page.is-active {
+            background-color: var(--color-main-regular);
+        }
+
+        @media (max-width: 800px) {
+
+            /* .product-images-container{} */
+            #product-images-container {
+                padding: 0px;
+            }
+
+
+            .splide__slide {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .splide__slide img {
+                width: 80%;
+                height: auto;
+                margin: auto;
+            }
+
+
+            #product-detail {
+                flex-flow: column;
+            }
+
+
+            .product-info-container {
+                padding: 2rem;
+                min-width: 100%;
+            }
         }
     </style>
 
@@ -33,17 +84,38 @@
 
     <component>navbar</component>
     <main>
+        <section id="breadcrumbs" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active"><a href="/products.html">Products</a></li>
+                <li class="breadcrumb-item active">Acura</li>
+                <li class="breadcrumb-item active" aria-current="page">MDX 2011</li>
+            </ol>
+        </section>
         <section id="product-detail" class="flex flex-row flex-nowrap flex-center width-full height-full">
             <div id="product-images-container" class="flex-auto flex flex-center p-5">
-                <img src="img/car1.jpg" alt="product image" class="product-image">
-                <img src="img/car2.jpg" alt="product image" class="product-image">
-                <img src="img/car1.jpg" alt="product image" class="product-image">
-                <img src="img/car2.jpg" alt="product image" class="product-image">
-                <img src="img/car1.jpg" alt="product image" class="product-image">
-                <img src="img/car2.jpg" alt="product image" class="product-image">
-                <img src="img/car2.jpg" alt="product image" class="product-image">
+                <div class="splide width-full flex-auto">
+                    <div class="splide__track">
+                        <ul class="splide__list no-bullet">
+                            <li class="splide__slide"><img src="img/car1.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car2.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car1.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car2.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car1.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car2.jpg" alt="product image" class="product-image">
+                            </li>
+                            <li class="splide__slide"><img src="img/car2.jpg" alt="product image" class="product-image">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="product-info-container flex flex-column flex-top-left p-6 gap-5">
+            <div class="product-info-container flex flex-column flex-top-left mx-5 p-5 gap-5">
                 <div>
                     <h1 class="product-title m-0 font-regular">Acura MDX</h1>
                     <span>2011 SUV</span>
@@ -61,9 +133,9 @@
                         and
                         never stop driving. It's a car that you want to buy now and drive fast and far
                 </div>
-                <div class="product-details">
+                <div class="product-details width-full">
                     <label class="product-details-label font-bold">D E T A I L S</label>
-                    <table class="product-details-table compact text-medium">
+                    <table class="product-details-table compact width-full text-medium">
                         <tr>
                             <td>Brand</td>
                             <td>Acura</td>
@@ -117,7 +189,14 @@
 </body>
 <script>
     window.addEventListener('load', function () {
-        new MatoGallery('#product-images-container');
+        // new MatoGallery('#product-images-container');
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: 1,
+            perMove: 1,
+            gap: '1rem',
+            pagination: true,
+        }).mount();
     });
 </script>
 
