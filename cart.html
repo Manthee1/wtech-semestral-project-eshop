@@ -66,6 +66,45 @@
             right: 0.5rem;
             z-index: 1;
         }
+
+        @media (max-width: 800px) {
+            #cart {
+                padding: 2rem;
+            }
+
+            .cart-item {
+                flex-flow: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .cart-item-list-container .text-container {
+                max-width: 100%;
+                margin-left: 0px;
+                white-space: normal;
+            }
+
+            .cart-item-description {
+                /* max-width: 25%; */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* Clamp it to 4 lines */
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                height: calc(1.5rem * 5);
+            }
+
+            .cart-item-price-total {
+                width: 100%;
+                text-align: center;
+            }
+
+            .buttons-conatiner {
+                flex-flow: column;
+
+            }
+        }
     </style>
 
 
@@ -79,7 +118,6 @@
         </div>
         <section id="cart" class="flex flex-container p-5 my-5 gap-5">
             <h1 class="text-extralarge m-0">Cart</h1>
-            <hr>
             <ul class="cart-container no-bullet flex flex-column gap-5">
                 <li class="cart-item flex flex-row flex-left flex-nowrap gap-5 p-5 position-relative">
                     <img src="./img/car1.jpg">
@@ -146,7 +184,7 @@
                 <h5 class="m-auto font-bold">1,700,000 €</h5>
             </div>
             <hr>
-            <div class="flex flex-row p-3">
+            <div class="buttons-conatiner flex flex-row p-3">
                 <a class="button button-clear" href="/cart.html">Continue shopping</a>
                 <button type="button" class="button-filled" onclick="window.location.href = '/shipping.html';">Proceed
                     to

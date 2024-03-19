@@ -293,3 +293,32 @@ footer ion-icon {
         padding: 1rem 2rem;
     }
 }
+
+
+
+/* ------------------- */
+/* Admin Sidebar */
+/* ------------------- */
+
+.admin-sidebar {
+    width: 250px;
+    padding: 1rem;
+    background-color: var(--color-base-background);
+    height: 100%;
+}
+
+.admin-sidebar li {
+    margin-bottom: 1rem;
+}
+
+.admin-sidebar li a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.admin-sidebar li a:hover {
+    color: var(--color-main-regular);
+}

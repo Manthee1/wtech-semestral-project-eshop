@@ -31,55 +31,54 @@
 <body>
 
 
+    <div class="flex flex-row flex-nowrap flex-left"></div>
+    <div>
+        <component>admin-sidebar</component>
+    </div>
 
-    <component>navbar</component>
-    <main>
-        <section class="flex-container width-full w-auto auth-form-wrapper">
-            <div class="form-container m-auto">
-                <!-- <form action="login.php" method="post"> -->
-                <div class="flex flex-row gap-2 mb-3">
-                    <h5 id="auth-form-title" class="m-0 mr-auto font-bold">Login</h5>
-                    <a id="registerSwitchButton" class="tab-button my-auto" onclick="switchTo('register')">Register</a>
-                    <a id="loginSwitchButton" class="tab-button my-auto active" onclick="switchTo('login')">Login</a>
-                </div>
-                <hr>
-                <br>
-                <div class="flex flex-column gap-4">
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <input type="password" name="password" id="password" placeholder="Password" required>
-                    <input type="password" name="repeat_password" id="repeat_password" placeholder="Confirm Password"
-                        required>
-                    <button class="button button-filled" type="submit">Login</button>
-                </div>
-                <!-- </form> -->
-            </div>
-        </section>
-    </main>
+    <section class="flex-container width-full">
 
-    <component>footer</component>
-    <script>
-        const formContainerEl = document.querySelector('.form-container');
-        function switchTo(type) {
-            if (type === 'login') {
-                formContainerEl.querySelector('#repeat_password').style.display = 'none';
-                formContainerEl.querySelector('#registerSwitchButton').classList.remove('active');
-                formContainerEl.querySelector('#loginSwitchButton').classList.add('active');
-                formContainerEl.querySelector('#auth-form-title').innerText = 'Login';
-                formContainerEl.querySelector('button').innerText = 'Login';
-            } else {
-                formContainerEl.querySelector('#repeat_password').style.display = 'block';
-                formContainerEl.querySelector('#loginSwitchButton').classList.remove('active');
-                formContainerEl.querySelector('#registerSwitchButton').classList.add('active');
-                formContainerEl.querySelector('#auth-form-title').innerText = 'Register';
-                formContainerEl.querySelector('button').innerText = 'Register';
-            }
-        }
-        window.addEventListener('load', function () {
-            switchTo('login');
-        });
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>$10</td>
+                    <td>5</td>
+                    <td>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td>$15</td>
+                    <td>3</td>
+                    <td>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product 3</td>
+                    <td>$20</td>
+                    <td>8</td>
+                    <td>
+                        <ion-icon name="create-outline"></ion-icon>
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-
-    </script>
 </body>
 
 </html>
