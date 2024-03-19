@@ -297,7 +297,10 @@ button.button-clear {
   background-color: transparent;
   border: none;
   padding: 0.5rem 2rem;
-  border-bottom: 2px solid var(--color-main-regular);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  /* text-underline-position: under; */
+  /* border-bottom: 2px solid var(--color-main-regular); */
 }
 
 .button.button-clear:hover,
