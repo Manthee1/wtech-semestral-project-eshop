@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rideaut</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 
 </head>
@@ -21,6 +22,8 @@
 
         .filter-container {
             background-color: var(--color-base-background);
+            height: 100%;
+            /* border-top: 2px solid var(--color-main-regular); */
         }
 
         .filter-container .input-section input {
@@ -42,8 +45,8 @@
         }
 
         .products-container {
-            border-top: 3px solid var(--color-main-regular);
-            border-left: 3px solid var(--color-main-regular);
+            border-top: 2px solid var(--color-main-regular);
+            border-left: 2px solid var(--color-main-regular);
 
         }
 
@@ -183,7 +186,6 @@
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Product</li>
             </ol>
-            <br>
         </div>
         <section id="products" class="flex flex-row flex-nowrap flex-top width-full">
             <div class="filter-container p-5">

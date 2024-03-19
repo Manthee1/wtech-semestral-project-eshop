@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rideaut</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 
     <style>
@@ -78,15 +79,15 @@
                         placeholder="Street address">
                     <input class="flex-4" type="text" name="City" id="city" placeholder="City">
                     <input class="flex-4" type="number" name="postalCode" id="postalCode" placeholder="PostalCode">
-                    <input class="flex-4" type="text" name="Country" id="Country" placeholder="Country">
+                    <input class="flex-4" type="text" name="Country" id="country" placeholder="Country">
                 </div>
 
                 <div class="settings-section">
                     <div class="flex flex-row width-full">
                         <h5 class="setting-section-title flex-left">Payment</h5>
                         <div class="flex flex-right">
-                            <a id="Card" class="tab-button my-auto active">card</a>
-                            <a id="BankTransfer" class="tab-button my-auto">Bank Transfer</a>
+                            <a id="card" class="tab-button my-auto active">Card</a>
+                            <a id="bankTransfer" class="tab-button my-auto">Bank Transfer</a>
                         </div>
                     </div>
                     <hr>
@@ -97,10 +98,11 @@
                     <input class="flex-1" type="text" name="cvv" id="cvv" placeholder="cvv">
                 </div>
                 <hr>
-                <a href="/cart.html"><u>Go back to cart</u></a>
-                <button type="button" class="button-filled">Proceed
-                    to
-                    chekout</button>
+                <div class="flex flex-row width-full">
+                    <a class="button button-clear" href="/cart.html">Go back to cart</a>
+                    <button type="button" class="button-filled">Proceed to chekout</button>
+                </div>
+
             </div>
             </div>
 

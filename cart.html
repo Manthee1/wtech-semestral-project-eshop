@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rideaut</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 
 </head>
@@ -15,21 +16,23 @@
 
     <style>
         #cart {
+
             max-width: 1200px;
         }
 
-        .black-background {
-            background-color: black;
-            color: white;
-        }
 
         .cart-item-list-container img {
             object-fit: contain;
         }
 
         .cart-item {
-            max-height: 220px;
+            /* max-height: 220px; */
             overflow: hidden;
+            border: 1px solid var(--color-main-regular);
+        }
+
+        .cart-item img {
+            max-height: 150px;
         }
 
         .cart-item-list-container .text-container {
@@ -48,6 +51,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
+            height: calc(1.5rem * 5);
 
         }
 
@@ -58,8 +62,8 @@
 
         .close-icon {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 0.5rem;
+            right: 0.5rem;
             z-index: 1;
         }
     </style>
@@ -74,11 +78,13 @@
             </ol>
         </div>
         <section id="cart" class="flex flex-container p-5 my-5 gap-5">
+            <h1 class="text-extralarge m-0">Cart</h1>
+            <hr>
             <ul class="cart-container no-bullet flex flex-column gap-5">
-                <li class="cart-item flex flex-row flex-left flex-nowrap gap-5 position-relative">
+                <li class="cart-item flex flex-row flex-left flex-nowrap gap-5 p-5 position-relative">
                     <img src="./img/car1.jpg">
                     <div class="text-container flex flex-column flex-3 flex-top-left">
-                        <h5 class="cart-item-name">Acura MDX 2011</h5>
+                        <h5 class="cart-item-name"><a href="/product-detail.html">Acura MDX 2011</a></h5>
                         <span class="cart-item-price">100,000 €</span>
                         <p class="cart-item-description">A very good car, with a very good engine and a very good
                             interior.</p>
@@ -100,10 +106,10 @@
                         <ion-icon name="close-outline" role="img" class="icon-large"></ion-icon>
                     </button>
                 </li>
-                <li class="cart-item flex flex-row flex-left flex-nowrap gap-5 position-relative">
+                <li class="cart-item flex flex-row flex-left flex-nowrap gap-5 p-5 position-relative">
                     <img src="./img/car2.jpg">
                     <div class="text-container flex flex-column flex-3 flex-top-left">
-                        <h5 class="cart-item-name">Jeep Wrangler 2017</h5>
+                        <h5 class="cart-item-name"><a href="/product-detail.html">Jeep Wrangler 2017</a></h5>
                         <span class="cart-item-price mb-3">500,000 €</span>
                         <p class="cart-item-description">The Jeep Wrangler is a a prime example of a luxury
                             car. It
@@ -141,7 +147,7 @@
             </div>
             <hr>
             <div class="flex flex-row p-3">
-                <a href="/cart.html"><u>Continue shopping</u></a>
+                <a class="button button-clear" href="/cart.html">Continue shopping</a>
                 <button type="button" class="button-filled" onclick="window.location.href = '/shipping.html';">Proceed
                     to
                     chekout</button>

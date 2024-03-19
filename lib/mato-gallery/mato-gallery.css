@@ -88,8 +88,8 @@
 
 }
 
-.mato-gallery .gallery-back i,
-.mato-gallery .gallery-next i {
+.mato-gallery .gallery-back ion-icon,
+.mato-gallery .gallery-next ion-icon {
     margin: auto;
 }
 
