@@ -15,6 +15,10 @@
             height: calc(100vh - var(--navbar-height));
         }
 
+        .table-container {
+            max-width: 1200px;
+        }
+
         @media (max-width: 480px) {
             .auth-form-wrapper {
                 height: auto;
@@ -31,13 +35,9 @@
 <body>
 
 
-    <div class="flex flex-row flex-nowrap flex-left"></div>
-    <div>
+
+    <section class="flex-container width-full table-container">
         <component>admin-sidebar</component>
-    </div>
-
-    <section class="flex-container width-full">
-
         <table>
             <thead>
                 <tr>
@@ -53,8 +53,12 @@
                     <td>$10</td>
                     <td>5</td>
                     <td>
-                        <ion-icon name="create-outline"></ion-icon>
-                        <ion-icon name="trash-outline"></ion-icon>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="create-outline" role="img"></ion-icon>
+                        </button>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -62,8 +66,12 @@
                     <td>$15</td>
                     <td>3</td>
                     <td>
-                        <ion-icon name="create-outline"></ion-icon>
-                        <ion-icon name="trash-outline"></ion-icon>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="create-outline" role="img"></ion-icon>
+                        </button>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -71,8 +79,12 @@
                     <td>$20</td>
                     <td>8</td>
                     <td>
-                        <ion-icon name="create-outline"></ion-icon>
-                        <ion-icon name="trash-outline"></ion-icon>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="create-outline" role="img"></ion-icon>
+                        </button>
+                        <button type="button" class="button-icon-clear">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
                     </td>
                 </tr>
             </tbody>
