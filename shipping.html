@@ -47,6 +47,10 @@
             #account-settings button {
                 width: 100%;
             }
+            
+            .buttons-conatiner {
+                flex-flow: column;
+            }
         }
     </style>
 
@@ -98,9 +102,9 @@
                     <input class="flex-1" type="text" name="cvv" id="cvv" placeholder="cvv">
                 </div>
                 <hr>
-                <div class="flex flex-row width-full">
+                <div class="buttons-conatiner flex flex-row width-full gap-3">
                     <a class="button button-clear" href="/cart.html">Go back to cart</a>
-                    <a type="button" class="button-filled" href="/summary.html">Proceed</a>
+                    <a class="button button-filled" href="/summary.html">Order</a>
                 </div>
             </div>
             </div>
