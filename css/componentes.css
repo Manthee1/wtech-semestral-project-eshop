@@ -301,24 +301,36 @@ footer ion-icon {
 /* ------------------- */
 
 .admin-sidebar {
-    width: 250px;
+    width: 1200px;
     padding: 1rem;
     background-color: var(--color-base-background);
     height: 100%;
 }
 
-.admin-sidebar li {
-    margin-bottom: 1rem;
+.admin-sidebar ul {
+    padding: 0;
+    list-style-type: none;
 }
 
-.admin-sidebar li a {
+.admin-sidebar ul li {
+    display: inline-block;
+}
+
+.admin-sidebar ul li:not(:last-child) a {
+    border-right: 1px solid #000;
+    /* Add vertical lines between tabs */
+    padding-right: 10px;
+    /* Add some spacing between the text and the line */
+}
+
+.admin-sidebar ul li a {
     display: block;
+    padding: 10px;
     text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.2rem;
-    font-weight: 500;
+    color: #000;
 }
 
-.admin-sidebar li a:hover {
-    color: var(--color-main-regular);
+.admin-sidebar ul li a ion-icon {
+    margin-right: 5px;
+    /* Add some spacing between the icon and the text */
 }
