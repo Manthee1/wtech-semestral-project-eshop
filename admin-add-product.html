@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        #product-form {
+            max-width: 1200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <component>admin-navbar</component>
+    <main class="admin">
+        <section id="product-form" class="flex-container w-auto p-5">
+            <h1 class="text-extralarge">Add Product</h1>
+            <div class="flex form-container mb-6 gap-5">
+                <div class="form-section">
+                    <h5 class="form-section-title">Basic Information</h5>
+                    <hr>
+                    <input class="flex-6" type="text" name="productName" id="productName" placeholder="Product Name"
+                        required>
+                    <input class="flex-6" type="number" name="productPrice" id="productPrice"
+                        placeholder="Product Price" step="0.01" min="0" required>
+                    <textarea class="flex-12" name="productDescription" id="productDescription"
+                        placeholder="Product Description" rows="4" required></textarea>
+                    <input class="flex-6" type="number" name="productStock" id="productStock"
+                        placeholder="Product Stock" min="0" required>
+                </div>
+
+                <div class="form-section">
+                    <h5 class="form-section-title">Product Details</h5>
+                    <hr>
+                    <select class="flex-4" name="productMake" id="productMake" required>
+                        <option value="">Select Make</option>
+                        <option value="Make1">Make1</option>
+                        <option value="Make2">Make2</option>
+                        <option value="Make3">Make3</option>
+                    </select>
+                    <select class="flex-4" name="productDrivetrain" id="productDrivetrain" required>
+                        <option value="">Select Drivetrain</option>
+                        <option value="Drivetrain1">Drivetrain1</option>
+                        <option value="Drivetrain2">Drivetrain2</option>
+                        <option value="Drivetrain3">Drivetrain3</option>
+                    </select>
+                    <select class="flex-4" name="productBodyType" id="productBodyType" required>
+                        <option value="">Select Body Type</option>
+                        <option value="BodyType1">BodyType1</option>
+                        <option value="BodyType2">BodyType2</option>
+                        <option value="BodyType3">BodyType3</option>
+                    </select>
+                    <input class="flex-4" type="number" name="productGasMileage" id="productGasMileage"
+                        placeholder="Product Gas Mileage" min="0" required>
+                    <select class="flex-4" name="productEngineType" id="productEngineType" required>
+                        <option value="">Select Engine Type</option>
+                        <option value="EngineType1">EngineType1</option>
+                        <option value="EngineType2">EngineType2</option>
+                        <option value="EngineType3">EngineType3</option>
+                    </select>
+                    <input class="flex-4" type="number" name="productHeight" id="productHeight"
+                        placeholder="Product Height" min="0" required>
+                    <input class="flex-4" type="number" name="productWidth" id="productWidth"
+                        placeholder="Product Width" min="0" required>
+                    <input class="flex-4" type="number" name="productLength" id="productLength"
+                        placeholder="Product Length" min="0" required>
+                    <select class="flex-4" name="productModel" id="productModel" required>
+                        <option value="">Select Product Model</option>
+                        <option value="Model1">Model1</option>
+                        <option value="Model2">Model2</option>
+                        <option value="Model3">Model3</option>
+                    </select>
+                    <input class="flex-4" type="number" name="productHorsePower" id="productHorsePower"
+                        placeholder="Product Horse Power" min="0" required>
+                    <input class="flex-4" type="text" name="productPassengerCapacity" id="productPassengerCapacity"
+                        placeholder="Product Passenger Capacity" required>
+                    <input class="flex-4" type="number" name="productYear" id="productYear" placeholder="Product Year"
+                        min="0" required>
+                </div>
+
+                <div class="form-section">
+                    <h5 class="form-section-title">Product Images</h5>
+                    <hr>
+                    <input class="flex-12" type="file" name="productImage" id="productImage" accept="image/*" multiple
+                        required>
+                </div>
+                <button class="button button-filled ml-auto">Add Product</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
