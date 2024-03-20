@@ -70,7 +70,8 @@ nav .cart-container .cart-count {
 .logo-container {
     text-decoration: none;
     color: var(--color-main-dark);
-    font-size: 1.5em;
+    font-size: 2.2rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 
@@ -300,37 +301,30 @@ footer ion-icon {
 /* Admin Sidebar */
 /* ------------------- */
 
-.admin-sidebar {
-    width: 1200px;
-    padding: 1rem;
-    background-color: var(--color-base-background);
-    height: 100%;
-}
-
-.admin-sidebar ul {
+.admin-navbar ul {
     padding: 0;
+    margin: 0px;
     list-style-type: none;
 }
 
-.admin-sidebar ul li {
+.admin-navbar ul li {
     display: inline-block;
+
 }
 
-.admin-sidebar ul li:not(:last-child) a {
-    border-right: 1px solid #000;
-    /* Add vertical lines between tabs */
-    padding-right: 10px;
-    /* Add some spacing between the text and the line */
-}
-
-.admin-sidebar ul li a {
+.admin-navbar ul li a {
     display: block;
-    padding: 10px;
+    padding: 1rem 2rem;
     text-decoration: none;
-    color: #000;
+    color: var(--color-main-dark);
+    transition: all 0.5s;
+    line-height: 1.5;
+    text-decoration: none;
+
 }
 
-.admin-sidebar ul li a ion-icon {
-    margin-right: 5px;
-    /* Add some spacing between the icon and the text */
+.admin-navbar ul li a.active {
+    background-color: var(--color-main-regular);
+    color: var(--color-main-white);
+    font-weight: 700;
 }

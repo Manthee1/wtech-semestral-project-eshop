@@ -85,3 +85,10 @@ main {
     box-sizing: border-box;
     min-height: calc(100vh - var(--navbar-height));
 }
+
+main.admin {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+}

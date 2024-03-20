@@ -11,23 +11,8 @@
     <script src="js/main.js"></script>
 
     <style>
-        .auth-form-wrapper {
-            height: calc(100vh - var(--navbar-height));
-        }
-
-
         .table-container {
             max-width: 1200px;
-        }
-
-        @media (max-width: 480px) {
-            .auth-form-wrapper {
-                height: auto;
-            }
-
-            .auth-form-wrapper .form-container {
-                margin: 0 2rem;
-            }
         }
     </style>
 
@@ -37,66 +22,84 @@
 
 
 
-    <section class="flex-container width-full table-container">
-        <component>admin-sidebar</component>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Product 1</td>
-                    <td>$10</td>
-                    <td>5</td>
-                    <td>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="create-outline" role="img"></ion-icon>
-                        </button>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Product 2</td>
-                    <td>$15</td>
-                    <td>3</td>
-                    <td>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="create-outline" role="img"></ion-icon>
-                        </button>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Product 3</td>
-                    <td>$20</td>
-                    <td>8</td>
-                    <td>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="create-outline" role="img"></ion-icon>
-                        </button>
-                        <button type="button" class="button-icon-clear">
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <div>
-            <button type="button" class="button-icon width-full">new<ion-icon name="add-outline"
-                    role="img"></ion-icon></button>
-        </div>
-    </section>
+    <component>admin-navbar</component>
+    <main class="admin">
+        <section class="flex-container width-full table-container admin-view">
+            <div>
+                <a href="/admin-add-product.html" class="button button-filled button-small">
+                    <ion-icon name="add-outline"></ion-icon>
+                    <span>Add Product</span>
+                </a>
+            </div>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>$10</td>
+                        <td>5</td>
+                        <td>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="create-outline" role="img"></ion-icon>
+                            </button>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>$15</td>
+                        <td>3</td>
+                        <td>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="create-outline" role="img"></ion-icon>
+                            </button>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Product 3</td>
+                        <td>$20</td>
+                        <td>8</td>
+                        <td>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="create-outline" role="img"></ion-icon>
+                            </button>
+                            <button type="button" class="button-icon-clear">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="table-pagination flex flex-row flex-center gap-3 flex-nowrap">
+                <button type="button" class="button-icon-clear">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <div class="flex flex-center gap-3">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                </div>
 
+                <button type="button" class="button-icon-clear">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
