@@ -35,6 +35,18 @@
             bottom: 5%;
         }
 
+        #floating-toolbar {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            padding: 1em;
+            border-radius: 1em 0 0 1em;
+            box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+
         @media (max-width: 700px) {
             #banner {
                 padding: 0 2em;
@@ -70,9 +82,19 @@
                 <a class="button button-filled" href="/products.html">Shop</a>
             </div>
         </section>
-        <!-- 
-        <button class="button button-outlined">Submit</button>
-        <button class="button button-clear">Submit</button> -->
+        <!-- Floating toolbar that expands from the right when hovered and displays some links -->
+        <div id="floating-toolbar" class="flex-container">
+            <div class="flex flex-row flex-center">
+                <h5 class="m-auto">Dev Links</h5>
+                <button class="button button-icon-clear text-large"
+                    onclick="document.getElementById('floating-toolbar').style.display = 'none'">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+
+            </div>
+            <a href="/admin.html">Admin</a>
+            <a href="/account_setting.html">Account</a>
+        </div>
     </main>
 
     <component>footer</component>
