@@ -111,7 +111,8 @@
 
 ---
 
-```sql
+
+```dbml
 Table Users {
   id int [pk]
   username varchar

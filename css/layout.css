@@ -167,34 +167,42 @@
 
 .gap-auto {
   gap: auto;
+  --gap: auto;
 }
 
 .gap-0 {
   gap: var(--size-0);
+  --gap: var(--size-0);
 }
 
 .gap-1 {
   gap: var(--size-1);
+  --gap: var(--size-1);
 }
 
 .gap-2 {
   gap: var(--size-2);
+  --gap: var(--size-2);
 }
 
 .gap-3 {
   gap: var(--size-3);
+  --gap: var(--size-3);
 }
 
 .gap-4 {
   gap: var(--size-4);
+  --gap: var(--size-4);
 }
 
 .gap-5 {
   gap: var(--size-5);
+  --gap: var(--size-5);
 }
 
 .gap-6 {
   gap: var(--size-6);
+  --gap: var(--size-6);
 }
 
 .p-auto {

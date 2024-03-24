@@ -21,10 +21,10 @@
     --color-shadow-light: #0000001A;
     --color-shadow-dark: #0000003D;
 
-    --color-system-success: #00FF00;
-    --color-system-error: #FF0000;
-    --color-system-warning: #FFA500;
-    --color-system-info: #0000FF;
+    --color-system-success: #34B234;
+    --color-system-error: #C91D1D;
+    --color-system-warning: #E8B130;
+    --color-system-info: #1D7CC9;
 
     --color-text: #3E3E3E;
     --color-subtext: #9A9A9A;
@@ -91,4 +91,10 @@ main.admin {
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+}
+
+/* Custom user selection */
+::selection {
+    background-color: var(--color-main-dark);
+    color: var(--color-main-white);
 }

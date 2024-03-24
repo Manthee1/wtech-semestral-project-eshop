@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rideaut</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        #account-settings {
+            max-width: 1200px;
+        }
+
+        @media (max-width: 480px) {
+            #account-settings {
+                padding: 2rem;
+            }
+
+            #account-settings input {
+                width: 100%;
+            }
+
+            #account-settings button {
+                width: 100%;
+            }
+
+            .buttons-container {
+                flex-flow: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <component>navbar</component>
+    <main>
+        <div id="breadcrumbs" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/cart.html">Cart</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/checkout.html">Checkout</a></li>
+            </ol>
+        </div>
+        <section id="account-settings" class="flex-container w-auto p-5">
+            <h1 class="text-extralarge">Checkout</h1>
+            <div class="flex form-container mb-6 gap-5">
+                <div class="form-section">
+                    <h5 class="form-section-title">Delivery</h5>
+                    <hr>
+                    <input class="flex-6" type="text" name="firstName" id="firstName" placeholder="First name" required>
+                    <input class="flex-6" type="text" name="lastName" id="lastName" placeholder="Last name" required>
+                    <input class="flex-6" type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+                    <input class="flex-6" type="email" name="email" id="email" placeholder="Email" required>
+                    <input class="flex-12" type="text" name="streetAddress" id="streetAddress"
+                        placeholder="Street address" required>
+                    <input class="flex-4" type="text" name="City" id="city" placeholder="City" required>
+                    <input class="flex-4" type="text" name="Country" id="country" placeholder="Country" required>
+                </div>
+
+                <div class="form-section">
+                    <div class="flex flex-row gap-2 mb-3 flex-auto">
+                        <h5 class="form-section-title flex-auto">Payment</h5>
+                        <a id="cardSwitchButton" class="tab-button my-auto active" onclick="switchTo('card')">Card</a>
+                        <a id="bankSwitchButton" class="tab-button my-auto" onclick="switchTo('bank-transfer')">Bank
+                            Transfer</a>
+                    </div>
+                    <hr>
+                    <p class="bank-transfer-info">Please check your email for bank transfer details after placing your
+                        order.</p>
+                    <input class="flex-12" type="text" name="nameOnCard" id="nameOnCard" placeholder="Name on card"
+                        required>
+                    <input class="flex-7" type="text" name="cardNumber" id="cardNumber" placeholder="Card number"
+                        required>
+                    <input class="flex-4" type="text" name="expirationDate" id="expirationDate"
+                        placeholder="Expiration date" required>
+                    <input class="flex-1" type="text" name="cvv" id="cvv" placeholder="CVV" required>
+                </div>
+                <hr>
+                <div class="buttons-container flex flex-row width-full gap-3">
+                    <a class="button button-outlined" href="/cart.html">Go back to cart</a>
+                    <a class="button button-filled" href="/summary.html">Order</a>
+                </div>
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+    <component>footer</component>
+</body>
+
+<script>
+    function switchTo(type) {
+        if (type === 'card') {
+            document.querySelector('#bankSwitchButton').classList.remove('active');
+            document.querySelector('#cardSwitchButton').classList.add('active');
+            document.querySelector('#nameOnCard').parentElement.style.display = "";
+            document.querySelector('#cardNumber').parentElement.style.display = "";
+            document.querySelector('#expirationDate').parentElement.style.display = "";
+            document.querySelector('#cvv').parentElement.style.display = "";
+            document.querySelector('.bank-transfer-info').style.display = 'none';
+        } else {
+            document.querySelector('#cardSwitchButton').classList.remove('active');
+            document.querySelector('#bankSwitchButton').classList.add('active');
+            document.querySelector('#nameOnCard').parentElement.style.display = 'none';
+            document.querySelector('#cardNumber').parentElement.style.display = 'none';
+            document.querySelector('#expirationDate').parentElement.style.display = 'none';
+            document.querySelector('#cvv').parentElement.style.display = 'none';
+            document.querySelector('.bank-transfer-info').style.display = '';
+        }
+    }
+
+    window.addEventListener('load', function () {
+        switchTo('card');
+    });
+
+</script>
+
+</html>

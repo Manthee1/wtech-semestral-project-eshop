@@ -11,19 +11,19 @@
     <script src="js/main.js"></script>
 
     <style>
-        .outline {
+        .container {
             border: 2px solid black;
-            padding: 30px;
         }
 
         .order-summary {
             height: calc(100vh - var(--navbar-height));
-            max-width: 480px;
+            max-width: 500px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
             .order-summary {
-                height: auto;
+                max-width: 100%;
+                padding: 0 2rem;
             }
         }
     </style>
@@ -37,9 +37,12 @@
     <component>navbar</component>
     <main>
         <section class="flex-container width-full w-auto order-summary m-auto">
-            <div class="container flex flex-column outline gap-3">
+            <div class="container flex flex-column gap-3 flex-center p-5 m-auto">
                 <h1 class="text-extralarge">Thank you for your purchase!</h1>
-                <h1 class="text-extralarge">Your order number is: 123456789</h1>
+                <!-- <h2 class="text-large">Your order number is: <b>123456789</b></h2> -->
+                <p class="text-center text-intermed">Check your email for your order confirmation, tracking number and
+                    other important
+                    information.</p>
                 <a href="index.html" class="button button-filled">Continue Shopping</a>
             </div>
         </section>

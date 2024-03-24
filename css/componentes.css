@@ -328,3 +328,38 @@ footer ion-icon {
     color: var(--color-main-white);
     font-weight: 700;
 }
+
+
+/* ------------------- */
+/* Pagination */
+/* ------------------- */
+
+pagination {
+    /* class="flex flex-row flex-center gap-4" */
+    display: flex;
+    flex: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-2);
+}
+
+pagination ol {
+    display: flex;
+    flex: row nowrap;
+    gap: var(--size-2);
+    list-style-type: none;
+    margin: 0;
+}
+
+pagination ol li {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--color-main-white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+pagination ol li.active a {
+    font-weight: 700;
+}

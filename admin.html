@@ -24,7 +24,7 @@
 
     <component>admin-navbar</component>
     <main class="admin">
-        <section class="flex-container width-full table-container admin-view">
+        <section class="flex-container width-full table-container admin-view gap-2">
             <div>
                 <a href="/admin-add-product.html" class="button button-filled button-small">
                     <ion-icon name="add-outline"></ion-icon>
@@ -43,49 +43,48 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Product 1</td>
-                        <td>$10</td>
+                        <td>Acura MDX 2011</td>
+                        <td>$54567</td>
                         <td>5</td>
                         <td>
-                            <button type="button" class="button-icon-clear">
+                            <a href="/admin-edit-product.html" class="button button-icon-clear">
                                 <ion-icon name="create-outline" role="img"></ion-icon>
-                            </button>
-                            <button type="button" class="button-icon-clear">
+                            </a>
+                            <a onclick="confirm('Are you sure?')" class="button button-icon-clear">
                                 <ion-icon name="trash-outline"></ion-icon>
-                            </button>
+                            </a>
                         </td>
                     </tr>
                     <tr>
-                        <td>Product 2</td>
-                        <td>$15</td>
-                        <td>3</td>
+                        <td>Acura MDX 2011</td>
+                        <td>$54567</td>
+                        <td>5</td>
                         <td>
-                            <button type="button" class="button-icon-clear">
+                            <a href="/admin-edit-product.html" class="button button-icon-clear">
                                 <ion-icon name="create-outline" role="img"></ion-icon>
-                            </button>
-                            <button type="button" class="button-icon-clear">
+                            </a>
+                            <a onclick="confirm('Are you sure?')" class="button button-icon-clear">
                                 <ion-icon name="trash-outline"></ion-icon>
-                            </button>
+                            </a>
                         </td>
                     </tr>
                     <tr>
-                        <td>Product 3</td>
-                        <td>$20</td>
-                        <td>8</td>
+                        <td>Acura MDX 2011</td>
+                        <td>$54567</td>
+                        <td>5</td>
                         <td>
-                            <button type="button" class="button-icon-clear">
+                            <a href="/admin-edit-product.html" class="button button-icon-clear">
                                 <ion-icon name="create-outline" role="img"></ion-icon>
-                            </button>
-                            <button type="button" class="button-icon-clear">
+                            </a>
+                            <a onclick="confirm('Are you sure?')" class="button button-icon-clear">
                                 <ion-icon name="trash-outline"></ion-icon>
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <br>
             <div class="table-pagination flex flex-row flex-center gap-3 flex-nowrap">
-                <button type="button" class="button-icon-clear">
+                <button href="/admin-edit-product.html" class="button button-icon-clear">
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </button>
                 <div class="flex flex-center gap-3">
@@ -94,7 +93,7 @@
                     <a href="#">3</a>
                 </div>
 
-                <button type="button" class="button-icon-clear">
+                <button href="/admin-edit-product.html" class="button button-icon-clear">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </button>
             </div>
