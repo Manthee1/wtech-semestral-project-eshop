@@ -715,12 +715,18 @@ table.compact td {
   font-weight: 400;
   color: var(--color-subtext);
   user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100% - 4rem);
   transition: all 0.3s;
 }
 
 .form-section .input-wrapper>label>span {
   color: var(--color-system-error);
   margin-left: 0.2rem;
+
+
 }
 
 .form-section .input-wrapper>*:not(:placeholder-shown)+label {
@@ -729,6 +735,8 @@ table.compact td {
   padding: 0.2rem 0.6rem;
   border-radius: 0.5rem;
   font-size: 1.2rem;
+  width: 100%;
+  overflow: visible;
 }
 
 @media (max-width: 500px) {
