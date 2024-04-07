@@ -16,23 +16,22 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('price');
             $table->text('description');
-            $table->integer('stock');
+            $table->unsignedInteger('stock')->default(0);
             $table->unsignedBigInteger('make_id');
+            $table->foreign('make_id')->references('id')->on('product_makes');
             $table->enum('drivetrain', ['FrontWheelDrive', 'RearWheelDrive', 'AllWheelDrive']);
             $table->enum('body_type', ['Sedan', 'SUV', 'Truck', 'Coupe', 'Hatchback']);
             $table->integer('gas_mileage');
             $table->enum('engine_type', ['Inline4', 'V6', 'V8', 'Electric', 'Hybrid']);
-            $table->integer('height');
-            $table->integer('width');
-            $table->integer('length');
+            $table->unsignedInteger('height');
+            $table->unsignedInteger('width');
+            $table->unsignedInteger('length');
             $table->unsignedBigInteger('model_id');
-            $table->integer('horse_power');
-            $table->string('passenger_capacity', 20);
+            $table->foreign('model_id')->references('id')->on('product_models');
+            $table->unsignedInteger('horse_power');
+            $table->string('passanger_capacity')->nullable();
             $table->integer('year');
             $table->timestamps();
-
-            $table->foreign('make_id')->references('id')->on('product_makes');
-            $table->foreign('model_id')->references('id')->on('product_models');
         });
     }
 

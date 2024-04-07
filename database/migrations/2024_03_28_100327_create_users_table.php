@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password');
-            $table->string('email');
-            $table->string('phone', 20);
-            $table->string('street_address');
-            $table->string('city');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('card_name');
-            $table->string('card_number', 20);
-            $table->string('card_expiration_date', 10);
-            $table->string('cvv', 4);
-            $table->string('role', 50);
-            $table->string('token', 255);
+            $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->string('street_address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('name_on_card')->nullable();
+            $table->string('card_number')->nullable();
+            $table->string('expiration_date')->nullable();
+            $table->string('cvv')->nullable();
+            $table->enum('role', ['Admin', 'User'])->default('User');
+            $table->string('token')->unique()->nullable();
             $table->timestamps();
         });
     }

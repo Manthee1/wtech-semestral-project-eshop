@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('product_images', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->string('url');
-            $table->timestamps();
-
             $table->foreign('product_id')->references('id')->on('products');
+            $table->string('filename');
+            $table->unsignedInteger('sort')->default(0);
+            $table->timestamps();
         });
     }
 
