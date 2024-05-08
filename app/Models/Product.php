@@ -80,6 +80,8 @@ class Product extends Model
 
     public function getMainImageUrl()
     {
+        if ($this->images->isEmpty())
+            return '';
         return env("APP_PRODUCTS_IMAGES_PATH") . '/' . $this->images->first()->filename;
     }
 }

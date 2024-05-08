@@ -23,6 +23,9 @@ class ProductImage extends Model
 
     public function getUrl()
     {
+        if ($this->filename === null)
+            return '';
+
         return env("APP_PRODUCTS_IMAGES_PATH") . '/' . $this->filename;
     }
 }
