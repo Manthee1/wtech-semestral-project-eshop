@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'TITLE')
+@section('title', 'Checkout')
 @section('styles')
     <style>
         #checkout {

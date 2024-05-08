@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'TITLE')
+@section('title', route('login') ? 'Login' : 'Register')
 @section('styles')
     <style>
         .auth-form-wrapper {
@@ -30,20 +30,20 @@
             <hr>
             <br>
             {{ Form::open(['route' => 'login', 'method' => 'POST', 'class' => 'flex flex-column gap-4', 'id' => 'loginForm']) }}
-                @csrf
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <button class="button button-filled" type="submit">Login</button>
+            @csrf
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <button class="button button-filled" type="submit">Login</button>
             {{ Form::close() }}
             {{ Form::open(['route' => 'register', 'method' => 'POST', 'class' => 'flex flex-column gap-4', 'id' => 'registerForm']) }}
-                @csrf
-                {{-- <input type="text" name="name" id="name" placeholder="Name" required> --}}
-                <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
-                <button class="button button-filled" type="submit">Register</button>
+            @csrf
+            {{-- <input type="text" name="name" id="name" placeholder="Name" required> --}}
+            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
+            <button class="button button-filled" type="submit">Register</button>
             {{ Form::close() }}
             <br>
             {{-- show register errors --}}
@@ -75,7 +75,7 @@
                 formContainerEl.querySelector('#auth-form-title').innerText = 'Login';
                 formContainerEl.querySelector('#registerSwitchButton').classList.remove('active');
                 formContainerEl.querySelector('#loginSwitchButton').classList.add('active');
-                window.history.replaceState({}, '', "{{route('login')}}");
+                window.history.replaceState({}, '', "{{ route('login') }}");
             } else {
                 loginFormEl.style.display = 'none';
                 registerFormEl.style.display = 'flex';
@@ -83,7 +83,7 @@
                 formContainerEl.querySelector('#auth-form-title').innerText = 'Register';
                 formContainerEl.querySelector('#loginSwitchButton').classList.remove('active');
                 formContainerEl.querySelector('#registerSwitchButton').classList.add('active');
-                window.history.replaceState({}, '', "{{route('register')}}");
+                window.history.replaceState({}, '', "{{ route('register') }}");
             }
         }
         window.addEventListener('load', function() {

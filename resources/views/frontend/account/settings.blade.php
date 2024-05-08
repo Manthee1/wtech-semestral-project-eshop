@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'TITLE')
+@section('title', 'Account Settings')
 @section('styles')
     <style>
         #account-settings {

@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'TITLE')
+@section('title', 'Order - ' . $order->tracking_number)
 @section('styles')
     <style>
 

@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', '404')
+@section('title', '403')
 
 @section('content')
 
