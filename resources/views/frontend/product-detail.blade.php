@@ -6,62 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.0/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.0/css/splide.min.css" integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
-    <style>
-        #product-detail {
-            min-height: calc(100vh - var(--navbar-height));
 
-        }
-
-        .product-info-container {
-            padding: 5rem 100px;
-            max-width: 600px;
-            min-width: 500px;
-            background-color: var(--color-base-background);
-        }
-
-        .splide__slide img {
-            width: 100%;
-            height: 450px;
-            object-fit: contain;
-        }
-
-        .splide__pagination__page.is-active {
-            background-color: var(--color-main-regular);
-        }
-
-        @media (max-width: 800px) {
-
-            /* .product-images-container{} */
-            #product-images-container {
-                padding: 0px;
-            }
-
-
-            .splide__slide {
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-content: center;
-            }
-
-            .splide__slide img {
-                width: 80%;
-                height: auto;
-                margin: auto;
-            }
-
-
-            #product-detail {
-                flex-flow: column;
-            }
-
-
-            .product-info-container {
-                padding: 2rem;
-                min-width: 100%;
-            }
-        }
-    </style>
 @endsection
 
 @section('content')
