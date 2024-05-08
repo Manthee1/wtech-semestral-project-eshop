@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 60);
             $table->decimal('total');
-            $table->decimal('unit_price');
-            $table->string('street_address');
-            $table->string('city');
+            $table->string('street_address', 255);
+            $table->string('city', 60);
             $table->string('country', 2);
             $table->string('tracking_number')->unique();
-            $table->enum('status', ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'])->default('Pending');
+            $table->enum('status', ['Awaiting Payment', 'Awaiting Fulfillment', 'Awaiting Shipment', 'Awaiting Pickup', 'Partially Shipped', 'Shipped', 'Completed', 'Cancelled', 'Declined', 'Refunded', 'Disputed', 'Manual Verification Required', 'Partially Refunded'])->default('Awaiting Payment');
+            $table->foreignid('user_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

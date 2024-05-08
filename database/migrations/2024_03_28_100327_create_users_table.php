@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->string('street_address')->nullable();
-            $table->string('city')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('name_on_card')->nullable();
-            $table->string('card_number')->nullable();
-            $table->string('expiration_date')->nullable();
-            $table->string('cvv')->nullable();
+            $table->string('password', 255);
+            $table->string('email', 255)->unique();
+            $table->string('phone_number', 20)->nullable();
+            $table->string('street_address', 255)->nullable();
+            $table->string('city', 60)->nullable();
+            $table->string('first_name', 100)->nullable();
+            $table->string('last_name', 100)->nullable();
+            $table->string('name_on_card', 201)->nullable();
+            $table->string('card_number', 16)->nullable();
+            $table->string('card_expiration_month', 2)->nullable();
+            $table->string('card_expiration_year', 4)->nullable();
+            $table->string('cvv', 3)->nullable();
             $table->enum('role', ['Admin', 'User'])->default('User');
-            $table->string('token')->unique()->nullable();
+            // $table->string('token')->unique()->nullable();
             $table->timestamps();
         });
     }

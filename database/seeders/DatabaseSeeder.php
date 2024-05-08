@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Admin
+        $admin = new \App\Models\User();
+        $admin->id = 0;
+        $admin->email = 'admin@rideout.com';
+        $admin->password = '$2y$12$OjgXnlldeWRUmjzIMBgeeuRwXc/MJEkIvbKlnj8U2b18dyzzULwNK';
+        $admin->role = 'Admin';
+        $admin->first_name = 'Admin';
+        $admin->last_name = 'rideout';
+
+        $admin->save();
     }
 }
