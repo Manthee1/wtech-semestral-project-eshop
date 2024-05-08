@@ -39,6 +39,8 @@ class Kernel extends HttpKernel
         ],
         "admin" => [
             \App\Http\Middleware\EncryptCookies::class,
+            \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\Admin::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
