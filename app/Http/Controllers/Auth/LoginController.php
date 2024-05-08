@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Http\Controllers\CartController;
 
 class LoginController extends Controller
 {
@@ -42,6 +44,14 @@ class LoginController extends Controller
         // If user is admin
         if ($user->role == 'Admin') {
             return redirect()->route('products.index');
+        }
+
+        // If the user is a regular user and has stuff in his cart.
+        // Automatically merge them with the database cart items.
+
+        if ($user->role == 'User') {
+            $cookie_cart_items = (new CartController)->getCartItemsFromCookie();
+            if ($cookie_cart_items->isNotEmpty()) (new CartController)->mergeCartItemsWithDatabase();
         }
     }
 
