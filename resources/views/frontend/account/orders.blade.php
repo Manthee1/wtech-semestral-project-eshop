@@ -10,7 +10,7 @@
 @section('content')
 
     {{-- Just make a table of all the orders --}}
-    <section id="account-orders" class="container flex-container w-auto p-5">
+    <section id="account-orders" class="flex-container w-auto p-5">
         <h1 class="text-extralarge">Orders</h1>
         @if ($orders->isEmpty())
             <p>You have no orders.</p>

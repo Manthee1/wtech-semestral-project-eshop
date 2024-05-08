@@ -8,7 +8,7 @@
         'breadcrumbs' => [['link' => route('home'), 'name' => 'Home'], ['link' => route('products-catalog'), 'name' => 'Products']],
     ])
     <div id="products" class="flex flex-row flex-nowrap flex-top width-full">
-        <section class="filter-container p-5">
+        <section class="filter-container p-5 m-4">
             <!-- header -->
             <div class="flex flex-row gap-4 filter-header">
                 <span class="text-extralarge font-bold">Filter</span>
@@ -17,7 +17,7 @@
                 </button>
             </div>
             <br>
-            <form class="flex flex-column gap-5" action="{{ route('products-catalog') }}" method="GET" onsubmit="return false">
+            <form class="flex flex-column gap-5" action="{{ route('products-catalog') }}" method="GET">
                 <input type="hidden" name="page" value="1">
                 <div class="search-section width-full">
                     <label for="search" class="sr-only p-2">SEARCH</label>
@@ -53,17 +53,17 @@
                 <x-filter-checkbox-section :items="$drivetrains" name="drivetrains"></x-filter-checkbox-section>
                 <x-filter-checkbox-section :items="$engineTypes" name="engineTypes"></x-filter-checkbox-section>
                 <x-filter-checkbox-section :items="$bodyTypes" name="bodyTypes"></x-filter-checkbox-section>
-                {{-- <input class="button-filled" type="submit" value="Apply"> --}}
+                <input class="button-filled" type="submit" value="Apply">
 
             </form>
 
         </section>
-        <section class="products-container flex flex-column gap-5 p-5 width-full">
+        <section class="products-container flex flex-column gap-5 p-5 my-4 width-full">
             <div class="product-options flex flex-column gap-5">
                 <div class="product-header">
                     <h1 class="text-extralarge flex m-0">
                         Products
-                        <button class="button-filled py-1 px-2 gap-2 text-medium" onclick="document.querySelector('#products').classList.toggle('filter-container-expanded')">
+                        <button class="button-filled py-1 px-2 gap-2" onclick="document.querySelector('#products').classList.toggle('filter-container-expanded')">
 
                             <ion-icon class="m-auto" name="options"></ion-icon>
                             <span class="m-auto">Filter</span>
@@ -78,26 +78,57 @@
                 <div class="flex flex-row flex-left gap-4">
                     <label class="m-0" for="order">Order By</label>
                     <br>
-                    <ol class="flex flex-row gap-2 no-bullet m-0">
-                        <li class="flex flex-left gap-2">
-                            <ion-icon name="cash"></ion-icon>
-                            <a href="{{ route('products-catalog', array_merge($requestParams, ['order' => 'price', 'sort' => 'desc'])) }}">Most Expensive</a>
-                        </li>
-                        <li class="flex flex-left gap-2">
-                            <ion-icon name="cash"></ion-icon>
-                            <a href="{{ route('products-catalog', array_merge($requestParams, ['order' => 'price', 'sort' => 'asc'])) }}">Least Expensive</a>
-                        </li>
-                        <li class="flex flex-left gap-2">
-                            <ion-icon name="star"></ion-icon>
-                            <a href="{{ route('products-catalog', array_merge($requestParams, ['order' => 'efficiency', 'sort' => 'asc'])) }}">Most Efficient</a>
-                        </li>
-                        <li class="flex flex-left gap-2">
-                            <ion-icon name="star"></ion-icon>
-                            <a href="{{ route('products-catalog', array_merge($requestParams, ['order' => 'efficiency', 'sort' => 'desc'])) }}">Least Efficient</a>
-                        </li>
+                    @php
+                        $order = request()->input('order');
+                        $sort = request()->input('sort');
+                        $orderings = [
+                            [
+                                'name' => 'Most Expensive',
+                                'value' => 'price',
+                                'sort' => 'asc',
+                                'icon' => 'cash',
+                            ],
+                            [
+                                'name' => 'Least Expensive',
+                                'value' => 'price',
+                                'sort' => 'desc',
+                                'icon' => 'cash',
+                            ],
+                            [
+                                'name' => 'Most Efficient',
+                                'value' => 'efficiency',
+                                'sort' => 'asc',
+                                'icon' => 'star',
+                            ],
+                            [
+                                'name' => 'Least Efficient',
+                                'value' => 'efficiency',
+                                'sort' => 'desc',
+                                'icon' => 'star',
+                            ],
+                        ];
+                    @endphp
+                    <ul class="flex flex-row gap-2 no-bullet m-0 hidden-md">
+                        @foreach ($orderings as $ordering)
+                            <li class="flex flex-left gap-2">
+                                <ion-icon name="{{ $ordering['icon'] }}"></ion-icon>
+                                <a href="{{ route('products-catalog', array_merge($requestParams, ['order' => $ordering['value'], 'sort' => $ordering['sort']])) }}"
+                                    class="{{ request()->input('order') == $ordering['value'] && request()->input('sort') == $ordering['sort'] ? 'font-bold' : '' }}">
+                                    {{ $ordering['name'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
 
+                    <select class="visible-md select-small" id="order-select" onchange="window.location.href = this.value">
+                        @foreach ($orderings as $ordering)
+                            <option value="{{ route('products-catalog', array_merge($requestParams, ['order' => $ordering['value'], 'sort' => $ordering['sort']])) }}"
+                                {{ request()->input('order') == $ordering['value'] && request()->input('sort') == $ordering['sort'] ? 'selected' : '' }}>
+                                {{ $ordering['name'] }}
+                            </option>
+                        @endforeach
+                    </select>
 
-                    </ol>
                     <br>
                 </div>
 
@@ -210,24 +241,54 @@
         });
 
 
-        let timeoutId;
-
-        function fetchProducts() {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                form.submit();
-                // const form = document.querySelector('#products .filter-container form');
-                // const formData = new FormData(form);
-                // const url = '{{ route('products-filter') }}';
-                // const params = new URLSearchParams(formData).toString();
-                // const productsContainer = document.querySelector('.products-container');
-                // fetch(`${url}?${params}`)
-                //     .then(response => response.text())
-                //     .then(html => {
-
-                //     });
-            }, 1000);
+        // This is so that the sticky filter container follows your bottom, and not your top.
+        function updateFilterContainerTop() {
+            const filterContainer = document.querySelector('.filter-container');
+            const navbar = document.querySelector('nav');
+            filterContainer.style.top = `${document.body.clientHeight - filterContainer.clientHeight -20 }px`;
         }
+
+        window.addEventListener('load', () => {
+            updateFilterContainerTop();
+        });
+
+        window.addEventListener('resize', () => {
+            updateFilterContainerTop();
+        });
+
+        // Any html update on filter container will trigger this function
+        const observer = new MutationObserver((mutations) => {
+            updateFilterContainerTop();
+        });
+
+        observer.observe(document.querySelector('.filter-container'), {
+            attributes: true,
+            childList: true,
+            subtree: true,
+        });
+
+
+
+
+
+        // let timeoutId;
+
+        // function fetchProducts() {
+        //     clearTimeout(timeoutId);
+        //     timeoutId = setTimeout(() => {
+        //         form.submit();
+        //         // const form = document.querySelector('#products .filter-container form');
+        //         // const formData = new FormData(form);
+        //         // const url = '{{ route('products-filter') }}';
+        //         // const params = new URLSearchParams(formData).toString();
+        //         // const productsContainer = document.querySelector('.products-container');
+        //         // fetch(`${url}?${params}`)
+        //         //     .then(response => response.text())
+        //         //     .then(html => {
+
+        //         //     });
+        //     }, 1000);
+        // }
     </script>
 
 @endsection

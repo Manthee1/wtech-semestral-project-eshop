@@ -510,6 +510,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Firefox */
 input[type=number] {
+    appearance: textfield;
     -moz-appearance: textfield;
 }
 
@@ -735,6 +736,11 @@ tfoot {
     height: fit-content;
 }
 
+/* Hieght 100vh - navbar height */
+.height-100vh {
+    height: calc(100vh - var(--navbar-height));
+}
+
 .max-height-fit {
     max-height: fit-content;
 }
@@ -756,6 +762,19 @@ tfoot {
 .hidden {
     display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -787,6 +806,33 @@ img.scaffhold {
 
 .container {
     max-width: 1200px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    max-width: 1200px;
+}
+
+@media (max-width: 480px) {
+
+    .container,
+    .flex-container {
+        padding: 2rem;
+    }
+
+    .container .input-wrapper input,
+    .flex-container .input-wrapper input {
+        width: 100%;
+    }
+
+    .container .button,
+    .flex-container .button {
+        width: 100%;
+    }
 }
 
 /* Clearing

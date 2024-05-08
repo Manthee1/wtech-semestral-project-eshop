@@ -1,31 +1,6 @@
 @extends('frontend.layout')
 
 @section('title', 'Checkout')
-@section('styles')
-    <style>
-        #checkout {
-            max-width: 1200px;
-        }
-
-        @media (max-width: 480px) {
-            #checkout {
-                padding: 2rem;
-            }
-
-            #checkout input {
-                width: 100%;
-            }
-
-            #checkout button {
-                width: 100%;
-            }
-
-            .buttons-container {
-                flex-flow: column;
-            }
-        }
-    </style>
-@endsection
 
 @section('content')
     <section id="checkout" class="flex-container w-auto p-5">
@@ -74,7 +49,7 @@
         <div class="form-section">
             <h5 class="form-section-title">Delivery</h5>
             <hr>
-            <x-form.input class="flex-6" type="text" name="first_name" id="first_name" label="First name" maxlength="100" required />>
+            <x-form.input class="flex-6" type="text" name="first_name" id="first_name" label="First name" maxlength="100" required />
             <x-form.input class="flex-6" type="text" name="last_name" id="last_name" label="Last name" maxlength="100" required />
             <x-form.input class="flex-6" type="tel" name="phone_number" id="phone_number" label="Phone Number" />
             <x-form.input class="flex-6" type="email" name="email" id="email" label="Email" maxlength="255" required />

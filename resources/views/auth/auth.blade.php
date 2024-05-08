@@ -21,7 +21,7 @@
 
 @section('content')
     <section class="flex-container width-full w-auto auth-form-wrapper">
-        <div class="form-container m-auto">
+        <div class="m-auto">
             <div class="flex flex-row gap-2 mb-3">
                 <h5 id="auth-form-title" class="m-0 mr-auto font-bold">Login</h5>
                 <a id="registerSwitchButton" class="tab-button my-auto" onclick="switchTo('register')">Register</a>
@@ -30,13 +30,13 @@
             <hr>
             <br>
 
-            {{ html()->form('POST', route('login'))->class('flex flex-column gap-4')->id('loginForm') }}
+            {{ html()->form('POST', route('login'))->class('flex flex-column gap-4')->id('loginForm')->open() }}
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <button class="button button-filled" type="submit">Login</button>
             {{ html()->form()->close() }}
 
-            {{ html()->form('POST', route('register'))->class('flex flex-column gap-4')->id('registerForm')->style('display: none') }}
+            {{ html()->form('POST', route('register'))->class('flex flex-column gap-4')->id('registerForm')->style('display: none')->open() }}
             <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
             <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
             <input type="email" name="email" id="email" placeholder="Email" required>

@@ -1,27 +1,6 @@
 @extends('frontend.layout')
 
 @section('title', 'Account Settings')
-@section('styles')
-    <style>
-        #account-settings {
-            max-width: 1200px;
-        }
-
-        @media (max-width: 480px) {
-            #account-settings {
-                padding: 2rem;
-            }
-
-            #account-settings input {
-                width: 100%;
-            }
-
-            #account-settings button {
-                width: 100%;
-            }
-        }
-    </style>
-@endsection
 
 @section('content')
 

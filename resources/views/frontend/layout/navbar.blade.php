@@ -20,7 +20,7 @@
             <div class="dropdown">
                 <button class="button button-icon-clear button-small flex flex-nowrap gap-2 dropdown-toggle" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <ion-icon name="person"></ion-icon>
-                    <span class="text-medium">{{ auth()->user()->first_name }}</span>
+                    <span class="text-medium m-auto">{{ auth()->user()->first_name }}</span>
                     <ion-icon name="chevron-down"></ion-icon>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="accountDropdown">

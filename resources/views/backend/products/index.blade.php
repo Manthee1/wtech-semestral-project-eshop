@@ -15,7 +15,7 @@
 
 @section('content')
 
-    <section class="flex-container width-full table-container admin-view gap-2">
+    <section class="flex-container width-full table-container admin-view gap-2 p-5">
         <x-alert />
         <div class="flex flex-row gap-2">
             <a href="{{ route('products.create') }}" class="button button-filled button-small">

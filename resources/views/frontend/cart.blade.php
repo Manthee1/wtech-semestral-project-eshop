@@ -1,11 +1,6 @@
 @extends('frontend.layout')
 
 @section('title', 'Cart')
-@section('styles')
-    <style>
-
-    </style>
-@endsection
 
 @section('content')
 
@@ -14,8 +9,8 @@
     ])
 
 
-    <section id="cart" class="flex flex-container p-5 my-5 gap-5">
-        <h1 class="text-extralarge m-0">Cart</h1>
+    <section id="cart" class="flex flex-container p-5 my-5 gap-5 ">
+        <h1 class="text-extralarge m-0 mr-auto width-full">Cart</h1>
 
         @if ($cart_items->isEmpty())
             <div class="flex-container py-6 my-6">

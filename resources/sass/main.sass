@@ -7,6 +7,7 @@
 @import './lib/skeleton.css'
 @import './componentes.sass'
 @import './layout.sass'
+@import './pages/home.sass'
 @import './pages/products-catalog.sass'
 @import './pages/product-detail.sass'
 @import './pages/cart.sass'
@@ -91,3 +92,35 @@ main.admin
 ::selection
     background-color: var(--color-main-dark)
     color: var(--color-main-white)
+
+@media (max-width: $size-screen-xs)
+    .hidden-xs
+        display: none
+
+@media (max-width: $size-screen-sm)
+    .hidden-sm
+        display: none
+
+@media (max-width: $size-screen-md)
+    .hidden-md
+        display: none
+
+@media (max-width: $size-screen-lg)
+    .hidden-lg
+        display: none
+
+@media (min-width: $size-screen-xs)
+    .visible-xs
+        display: none
+
+@media (min-width: $size-screen-sm)
+    .visible-sm
+        display: none
+
+@media (min-width: $size-screen-md)
+    .visible-md
+        display: none
+
+@media (min-width: $size-screen-lg)
+    .visible-lg
+        display: none

@@ -10,7 +10,7 @@
 @section('content')
 
     {{-- Just make a table of all the orders --}}
-    <section id="account-order" class="container flex-container w-auto p-5">
+    <section id="account-order" class="flex-container w-auto p-5">
         <h1 class="text-extralarge">Order #{{ $order->id }} - {{ $order->tracking_number }}</h1>
         <table class="width-full">
             <thead>

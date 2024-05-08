@@ -1,7 +1,7 @@
 {{-- Input prop --}}
 @props(['type' => 'text', 'name', 'label', 'value' => null, 'disabled' => false, 'required' => false, 'min' => null, 'max' => null, 'step' => null, 'maxlength' => null, 'id' => null, 'class' => '', 'checked' => false])
 
-<div class="input-wrapper {{ $class }}">
+<div class="input-wrapper {{ $class }} {{ $type === 'radio-tab' ? 'tab-button-wrapper' : '' }}">
     @if ($type === 'radio-tab')
         <input type="radio" class="hidden" name="{{ $name }}" id="{{ $id ?? $name }}" value="{{ $value }}" {{ $disabled ? 'disabled' : '' }} {{ $required ? 'required' : '' }} {{ $checked ? 'checked' : '' }}>
         <label for="{{ $id ?? $name }}" class="tab-button">{{ $label }}</label>
@@ -14,6 +14,3 @@
         <label for="{{ $id ?? $name }}">{{ $label }} {!! $required ? '<span>*</span>' : '' !!}</label>
     @endif
 </div>
-
-
-<script></script>
