@@ -33,7 +33,7 @@
         <x-alert />
         {{-- Show all old() values --}}
         {{-- @dump(old()) --}}
-        {{ Form::open(['route' => 'order.store', 'class' => 'flex form-container mb-6 gap-5']) }}
+        {{ html()->form('POST', route('order.store'))->class('flex form-container mb-6 gap-5')->open() }}
         <div class="form-section">
             <h5 class="form-section-title">Summary</h5>
             {{-- SHow a quick summary of the product, quantity, and its price --}}
@@ -103,7 +103,7 @@
             <a class="button button-outlined" href="{{ route('cart') }}">Go back to cart</a>
             <button type="submit" class="button button-filled">Place order</button>
         </div>
-        {{ Form::close() }}
+        {{ html()->form()->close() }}
 
     </section>
 @endsection

@@ -145,9 +145,9 @@
                 </table>
             </div>
 
-            {{ Form::open(['route' => ['cart.add', $product->id], 'method' => 'POST', 'class' => 'width-full']) }}
+            {{ html()->form('POST', route('cart.add', $product->id))->class('width-full')->open() }}
             <button class="button button-filled width-full">Add to Cart</button>
-            {{ Form::close() }}
+            {{ html()->form()->close() }}
         </div>
     </section>
 @endsection

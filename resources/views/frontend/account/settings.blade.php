@@ -28,9 +28,8 @@
     <section>
         <section id="account-settings" class="flex-container w-auto p-5">
             <h1 class="text-extralarge">Account Settings</h1>
-            {{-- <form class="flex form-container mb-6 gap-5"> --}}
             <x-alert />
-            {{ Form::open(['route' => 'account-settings.update', 'method' => 'PUT', 'class' => 'flex form-container mb-6 gap-5']) }}
+            {{ html()->form('PUT', route('account-settings.update'))->class('flex form-container mb-6 gap-5')->open() }}
             <div class="form-section">
                 <h5 class="form-section-title">Basic</h5>
                 <hr>
@@ -69,7 +68,7 @@
             <div class="flex flex-12 width-full">
                 <button class="button button-filled ml-auto">Save</button>
             </div>
-            {{ Form::close() }}
+            {{ html()->form()->close() }}
         </section>
     </section>
 

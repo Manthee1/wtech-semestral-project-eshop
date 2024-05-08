@@ -51,7 +51,7 @@
         <x-form.textarea name="description" label="Product Description" :value="$product->description ?? ''" required id="description" class="flex-12" rows="4" />
         {{-- is the product active --}}
         <div class='flex-12 flex flex-row flex-left'>
-            {{ Form::checkbox('active', 1, isset($product) ? $product->active : true, ['class' => 'my-auto', 'id' => 'active', 'id' => 'active']) }}
+            {{ html()->checkbox('active', isset($product) ? $product->active : true, ['class' => 'my-auto', 'id' => 'active']) }}
             <label class="my-auto" for="active">Active</label>
         </div>
     </div>
@@ -71,10 +71,9 @@
     <div class="form-section">
         <h5 class="form-section-title">Product Dimensions</h5>
         <hr>
-
-        {{ Form::number('height', isset($product) ? $product->height : null, ['class' => 'flex-4', 'placeholder' => 'Product Height', 'min' => 0, 'id' => 'height']) }}
-        {{ Form::number('width', isset($product) ? $product->width : null, ['class' => 'flex-4', 'placeholder' => 'Product Width', 'min' => 0, 'id' => 'width']) }}
-        {{ Form::number('length', isset($product) ? $product->length : null, ['class' => 'flex-4', 'placeholder' => 'Product Length', 'min' => 0, 'id' => 'length']) }}
+        <x-form.input type="number" name="height" label="Product Height" :value="$product->height ?? null" class="flex-4" min="0" id="height" />
+        <x-form.input type="number" name="width" label="Product Width" :value="$product->width ?? null" class="flex-4" min="0" id="width" />
+        <x-form.input type="number" name="length" label="Product Length" :value="$product->length ?? null" class="flex-4" min="0" id="length" />
     </div>
 
     <div class="form-section">

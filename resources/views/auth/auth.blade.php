@@ -29,22 +29,21 @@
             </div>
             <hr>
             <br>
-            {{ Form::open(['route' => 'login', 'method' => 'POST', 'class' => 'flex flex-column gap-4', 'id' => 'loginForm']) }}
-            @csrf
+
+            {{ html()->form('POST', route('login'))->class('flex flex-column gap-4')->id('loginForm') }}
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <button class="button button-filled" type="submit">Login</button>
-            {{ Form::close() }}
-            {{ Form::open(['route' => 'register', 'method' => 'POST', 'class' => 'flex flex-column gap-4', 'id' => 'registerForm']) }}
-            @csrf
-            {{-- <input type="text" name="name" id="name" placeholder="Name" required> --}}
+            {{ html()->form()->close() }}
+
+            {{ html()->form('POST', route('register'))->class('flex flex-column gap-4')->id('registerForm')->style('display: none') }}
             <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
             <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
             <button class="button button-filled" type="submit">Register</button>
-            {{ Form::close() }}
+            {{ html()->form()->close() }}
             <br>
             {{-- show register errors --}}
             @if ($errors->any())

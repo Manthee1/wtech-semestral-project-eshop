@@ -35,27 +35,26 @@
                             <p class="cart-item-description">{{ $cart_item->product->description }}</p>
                         </div>
                         <div class="cart-item-quantity-container flex flex-center flex-auto flex-nowrap m-auto flex-center">
-                            {{ Form::open(['route' => ['cart.update', $cart_item->id], 'method' => 'PUT']) }}
+                            {{ html()->form()->open(['route' => ['cart.update', $cart_item->id], 'method' => 'PUT']) }}
                             <input type="hidden" name="quantity" value="{{ $cart_item->quantity - 1 }}">
                             <button type="submit" class="button-icon-clear">
                                 <ion-icon name="chevron-back-circle"></ion-icon>
                             </button>
-                            {{ Form::close() }}
+                            {{ html()->form()->close() }}
                             <span class="cart-item-quantity">{{ $cart_item->quantity }}</span>
-                            {{ Form::open(['route' => ['cart.update', $cart_item->id], 'method' => 'PUT']) }}
+                            {{ html()->form()->open(['route' => ['cart.update', $cart_item->id], 'method' => 'PUT']) }}
                             <input type="hidden" name="quantity" value="{{ $cart_item->quantity + 1 }}">
                             <button type="submit" class="button-icon-clear">
                                 <ion-icon name="chevron-forward-circle"></ion-icon>
                             </button>
-                            {{ Form::close() }}
+                            {{ html()->form()->close() }}
                         </div>
                         <span class="cart-item-price-total font-bold text-large text-right">{{ formatPrice($cart_item->product->price * $cart_item->quantity) }}</span>
-                        {{ Form::open(['route' => ['cart.remove', $cart_item->product->id], 'method' => 'delete', 'class' => 'cart-item-remove']) }}
+                        {{ html()->form('DELETE', route('cart.remove', $cart_item->id))->class('cart-item-remove')->open() }}
                         <button type="submit" class="button-icon-clear close-icon">
                             <ion-icon name="close-outline" role="img" class="icon-large"></ion-icon>
                         </button>
-                        {{-- <button type="submit" class="button button-outlined">Remove</button> --}}
-                        {{ Form::close() }}
+                        {{ html()->form()->close() }}
                     </li>
                 @endforeach
             </ul>
