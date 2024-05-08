@@ -3,14 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,9 +14,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'id', 'email', 'password',  'phone_number', 'street_address', 'city', 'first_name', 'last_name', 'name_on_card', 'card_number', 'expiration_date', 'cvv', 'role', 'token'
     ];
 
     /**
@@ -42,4 +36,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    protected function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
+
+    protected function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'Admin';
+    }
 }
