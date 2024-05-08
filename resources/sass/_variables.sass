@@ -1,36 +1,13 @@
-// Body
-$body-bg: #f8fafc
+@use "sass:map"
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif
-$font-size-base: 0.9rem
-$line-height-base: 1.6
+$navbar-height: 90px
 
-$sans: 1em/1.6 system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Fira Sans, sans-serif
-$mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, 'Courier New', monospace
+$sizes: ( 0: 0, 1: 0.2rem, 2: 0.5rem, 3: 1rem, 4: 1.5rem, 5: 3rem, 6: 4rem,'auto': auto)
 
-$primary-color: #007bff
-$secondary-color: #6c757d
+$size-screen-xs: 480px
+$size-screen-sm: 800px
+$size-screen-md: 1000px
+$size-screen-lg: 1200px
+$size-screen-xl: 1400px
 
-$c1: #0074d9
-$c2: #eee
-$c3: #fff
-$c4: #000
-$c5: #fff
-$m1: 8px
-$rc: 8px
-
-$c2-dark: #333
-$c3-dark: #1e1f20
-$c4-dark: #fff
-
-\:root
-    --sans: #{$sans}
-    --mono: #{$mono}
-    --c1: #{$c1}
-    --c2: #{$c2}
-    --c3: #{$c3}
-    --c4: #{$c4}
-    --c5: #{$c5}
-    --m1: #{$m1}
-    --rc: #{$rc}
+$gap: 0rem

@@ -1,0 +1,27 @@
+// <section class="error-page">
+//         <h1>404</h1>
+//         <ion-icon name="sad-outline" style="font-size: 100px;"></ion-icon>
+//         <h2>Page not found</h2>
+//         <p>Sorry, the page you are looking for drove away.</p>
+//         <a href="{{ route('home') }}" class="btn btn-primary">Go Home!</a>
+//     </section>
+
+.error-page
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: calc(100vh - var(--navbar-height))
+    background-color: #f8f9fa
+    h1
+        font-size: 100px
+        color: var(--color-main-regular)
+
+    h2
+        font-size: 30px
+        color: var(--color-main-regular)
+    p
+        font-size: 20px
+        color: var(--color-main-regular)
+    a
+        margin-top: 20px

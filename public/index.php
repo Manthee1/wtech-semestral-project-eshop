@@ -3,6 +3,8 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+ini_set('mbstring.func_overload', 2);
+
 define('LARAVEL_START', microtime(true));
 
 /*

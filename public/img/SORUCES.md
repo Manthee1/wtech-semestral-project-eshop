@@ -1,0 +1,2 @@
+car1 and car 2 jpegs are from this source: https://www.reddit.com/r/MachineLearning/comments/ek5zwv/p_64000_pictures_of_cars_labeled_by_make_model/
+The banner car is from this source: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpurepng.com%2Fpublic%2Fuploads%2Flarge%2Fpurepng.com-rolls-royce-ghost-black-carcarvehicletransportrolls-royce-961524660882hukzh.png&f=1&nofb=1&ipt=dabac2b47df6c2c563d571a9886de460b5f4b2ac42f9f5f181ce579fa43a608e&ipo=images

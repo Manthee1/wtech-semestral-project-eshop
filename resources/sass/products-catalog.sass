@@ -1,0 +1,151 @@
+
+.products
+    background-color: var(--color-base-background)
+
+.filter-container
+    height: 100%
+
+    & .input-section input
+        max-width: 15rem
+
+    & .checkbox-section
+        .checkbox-section-content
+            max-height: 0em
+            overflow: hidden
+        &.has-selected .checkbox-section-header .checkbox-section-name
+            font-weight: 700
+        &.expanded
+            .checkbox-section-content
+                max-height: 100em
+                overflow: auto
+            & .checkbox-section-header
+                ion-icon
+                    transform: rotateX(180deg)
+        & .checkbox-section-header
+            ion-icon
+                transition: transform 0.2s ease-in-out
+            .checkbox-section-name
+                text-transform: uppercase
+                font-weight: 500
+        & div label
+            margin: 0px
+        & .show-more-container
+            & button
+                display: none
+        & .checkbox-container
+            max-height: 15rem
+            overflow-y: auto
+            & .checkbox-item.inactive
+                & label
+                    color: var(--color-main-medium)
+                & input
+                    cursor: not-allowed
+                    pointer-events: none
+
+.filter-container .filter-header button,
+.product-options .product-header button
+    display: none
+
+.product-options li+li::before
+    content: "|"
+    padding: 0 0.5rem
+    color: var(--color-main-regular)
+
+.product-list-container img
+    /* min-height: 240px; */
+    /* min-width: 320px; */
+    width: 100%
+    object-fit: cover
+
+.product-list-container
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+    width: 100%
+    gap: 2rem
+
+.product-card
+    flex: auto
+    text-align: left
+    width: 100%
+    height: 100%
+    /* border: 2px solid var(--color-main-regular); */
+    border: none
+    padding: 1rem
+    box-shadow: 0px 0px 10px 0px var(--color-shadow-light)
+    overflow: hidden
+
+    & img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        max-height: 240px
+        max-width: 320px
+
+    &>a
+        height: 100%
+        display: flex
+        flex-flow: column nowrap
+        justify-content: flex-start
+        align-content: flex-start
+        text-decoration: none
+        min-width: auto
+
+    &>a &-content
+        height: 100%
+        gap: 1rem
+
+    & &-title
+        font-weight: 500
+        white-space: normal
+        text-overflow: ellipsis
+        overflow: hidden
+
+    & &-description
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: normal
+        display: -webkit-box
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        line-height: 1.5rem
+        height: 4.5rem
+
+@media (max-width: 1000px)
+    .filter-container input:not([type="checkbox"])
+        width: 100%
+
+/* Hide the filter sidebar when on mobile */
+@media (max-width: 700px)
+    .filter-container
+        position: fixed
+        top: 0
+        left: -100%
+        width: 100%
+        height: 100%
+        background-color: var(--color-base-background)
+        z-index: 1002
+        padding: 2rem
+        transition: all 0.5s
+        overflow-y: scroll
+
+    .filter-container .filter-header button,
+    .product-options .product-header button
+        display: flex
+
+    .filter-container-expanded .filter-container
+        left: 0
+
+    #filter-expand-button
+        display: flex
+
+    .products-container
+        padding: 2rem
+        border: none
+
+    .product-list-container
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        grid-gap: 1rem
+        gap: 1rem
+
+    .product-card img
+        padding: 0em 1rem

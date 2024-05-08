@@ -1,0 +1,103 @@
+#cart
+
+    max-width: 1200px
+
+.cart-item-list-container img
+    object-fit: contain
+
+.cart-item
+    overflow: hidden
+    border: 2px solid var(--color-main-regular)
+
+    & img
+        max-height: 150px
+
+    &-list-container .text-container
+        max-width: 350px
+        margin-left: 0px
+        white-space: normal
+
+    &-description
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        -webkit-box-orient: vertical
+        height: calc(1.5rem * 5)
+
+    &-price-total
+        flex-wrap: nowrap
+        white-space: nowrap
+        flex: 1
+
+.close-icon
+    position: absolute
+    top: 0.5rem
+    right: 0.5rem
+    z-index: 1
+
+@media (max-width: 800px)
+    #cart
+        padding: 2rem
+
+    .cart-item
+        gap: 2rem
+        padding: 1rem
+        margin: auto
+        width: 100%
+
+        & img
+            object-fit: contain
+            max-width: 100px
+            max-height: fit-content
+
+        & .text-container
+            margin-left: 0px
+            white-space: normal
+            flex: 1 1 auto
+
+        & .text-container a
+            white-space: normal
+
+        &-description
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            height: calc(1.7rem * 3)
+
+        &-price-total
+            text-align: center
+
+    .buttons-container
+        flex-flow: column
+
+@media (max-width: 550px)
+    .cart-item
+        flex-wrap: wrap
+        justify-content: center
+
+        & img
+            max-width: 100%
+            max-height: 150px
+
+        & .text-container
+            padding-right: 2rem
+            min-width: 200px
+
+        & .cart-item-name
+            margin-bottom: 0.5rem
+            min-width: 200px
+
+        & .cart-item-quantity-container
+            flex: 1 1 calc(50% - 1rem)
+
+        & .cart-item-price-total
+            flex: 1 1 calc(50% - 1rem)
+
+    .close-icon
+        position: absolute
+        padding: 0.1rem
+        top: -0.5rem
+        right: -0.5rem
