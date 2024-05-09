@@ -127,11 +127,11 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         // Delete the product
-        $product->delete();
         $product->images->each(function ($image) {
             Storage::disk('public')->delete(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $image->filename);
             $image->delete();
         });
+        $product->delete();
         return redirect()->back()->with('success', 'Product deleted successfully');
     }
 
@@ -288,7 +288,7 @@ class ProductController extends Controller
         $productsQuery = applyWheres($productsQuery->select('products.*'));
 
         if (request()->has('order') && request()->has('sort')) {
-            $productsQuery = $productsQuery->orderByRaw("CASE WHEN " . request('order') . " IS NULL THEN 1 ELSE 0 END, " . request('order') . " " . request('sort'));
+            $productsQuery = $productsQuery->orderByRaw("CASE WHEN products." . request('order') . " IS NULL THEN 1 ELSE 0 END, products." . request('order') . " " . request('sort'));
         }
 
 

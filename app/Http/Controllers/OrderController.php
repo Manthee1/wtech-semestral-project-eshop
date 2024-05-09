@@ -32,7 +32,7 @@ class OrderController extends Controller
             'city' => $data['city'],
             'country' => $data['country'],
             'tracking_number' => uniqid('R'),
-            'status' => $data['payment_type'] == 'card' ? 'processing' : 'pending',
+            'status' => $data['payment_type'] == 'card' ? 'Awaiting Payment' : 'Awaiting Fulfillment',
             'user_id' => auth()->user()?->id,
         ]);
         foreach ($cart_items as $cart_item) {
