@@ -1,17 +1,6 @@
 @extends('backend.layout')
 
 @section('title', 'Products')
-@section('styles')
-    <style>
-        .table-container {
-            max-width: 1200px;
-        }
-
-        table {
-            font-size: 1.5rem;
-        }
-    </style>
-@endsection
 
 @section('content')
 
@@ -23,6 +12,8 @@
                 <span>Add Product</span>
             </a>
             <form action="{{ route('products.index') }}" method="GET">
+                <input hidden type="text" name="order" value="{{ request('order') }}">
+                <input hidden type="text" name="sort" value="{{ request('sort') }}">
                 <input class="input-small" type="text" name="search" placeholder="Search Products" value="{{ request('search') }}">
                 <button type="submit" class="button button-icon-clear button-small">
                     <ion-icon name="search-outline" role="img"></ion-icon>
@@ -30,15 +21,71 @@
             </form>
         </div>
         <br>
-        <table class="compact">
+        <table class="compact text-medium">
             <thead>
+                @php
+                    $columns = [
+                        [
+                            'name' => 'id',
+                            'title' => 'Id',
+                            'width' => '50px',
+                            'order' => true,
+                        ],
+                        [
+                            'name' => 'name',
+                            'title' => 'Product Name',
+                            'order' => true,
+                        ],
+                        [
+                            'name' => 'price',
+                            'title' => 'Price',
+                            'width' => '100px',
+                            'order' => true,
+                        ],
+                        [
+                            'name' => 'stock',
+                            'title' => 'Stock',
+                            'width' => '100px',
+                            'order' => true,
+                        ],
+                        [
+                            'name' => 'active',
+                            'title' => 'Active',
+                            'width' => '50px',
+                            'order' => true,
+                        ],
+                        [
+                            'name' => 'actions',
+                            'title' => '',
+                            'width' => '50px',
+                            'order' => false,
+                        ],
+                    ];
+
+                    $order = request('order', 'id');
+                    $sort = request('sort', 'asc');
+
+                    $requestParams = request()->except(['order', 'sort']);
+
+                    $orderIcon = $sort === 'asc' ? 'chevron-up' : 'chevron-down';
+
+                @endphp
                 <tr>
-                    <th width="50px">Id</th>
-                    <th>Product Name</th>
-                    <th width="100px">Price</th>
-                    <th width="100px">Stock</th>
-                    <th width="50px">Active</th>
-                    <th width="50px"></th>
+                    @foreach ($columns as $column)
+                        <th style="width: {{ $column['width'] ?? 'auto' }}">
+                            @if ($column['order'])
+                                <a href="{{ route('products.index', array_merge($requestParams, ['order' => $column['name'], 'sort' => $order === $column['name'] && $sort === 'asc' ? 'desc' : 'asc'])) }}">
+                                    {{ $column['title'] }}
+                                    @if ($order === $column['name'])
+                                        <ion-icon name="{{ $orderIcon }}"></ion-icon>
+                                    @endif
+                                </a>
+                            @else
+                                {{ $column['title'] }}
+                            @endif
+                        </th>
+                    @endforeach
+                </tr>
                 </tr>
             </thead>
             <tbody>
@@ -55,13 +102,14 @@
                         <td><ion-icon name="{{ $product->active ? 'checkmark' : 'close' }}"></ion-icon></td>
 
                         <td>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this product?')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="button button-icon-clear button-small">
                                     <ion-icon name="trash-outline" role="img"></ion-icon>
                                 </button>
                             </form>
+                        </td>
                         </td>
                     </tr>
                 @endforeach
