@@ -1,6 +1,8 @@
 @extends('frontend.layout')
 
 @section('title', 'Products')
+@section('description', 'Step into a world where every car is a masterpiece of engineering and design. Unleash the thrill of driving with our meticulously curated collection.');
+@section('keywords', 'Luxury sedans, Sports cars, SUVs, Exotic vehicles, High-performance automobiles, Prestige car models, Premium car brands, Luxury car inventory, Top-tier automotive collection, Exclusive car listings');
 
 @section('content')
 

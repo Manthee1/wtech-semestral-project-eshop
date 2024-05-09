@@ -1,6 +1,9 @@
 @extends('frontend.layout')
 
 @section('title', $product->getName())
+@section('description', $product->description)
+@section('keywords', $product->make->name . ', ' . $product->model->name . ', ' . $product->year . ', ' . $product->body_type . ', ' . $product->price . ', ' . $product->engine_type?->name . ', ' . $product->drivetrain?->name . ', ' .
+    $product->passenger_capacity . ', ' . $product->efficiency . ', ' . $product->horse_power)
 @section('styles')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.0/js/splide.min.js"></script>

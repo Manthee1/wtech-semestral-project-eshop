@@ -1,6 +1,7 @@
 @extends('frontend.layout')
 
 @section('title', 'Cart')
+@section('description', 'Your cart items')
 
 @section('content')
 

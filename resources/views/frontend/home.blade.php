@@ -1,6 +1,8 @@
 @extends('frontend.layout')
 
 @section('title', 'Home')
+@section('description', 'Ride with Confidence and embark on a journey of unparalleled luxury and performance. Our handpicked selection of cars exudes power, elegance, and sheer excellence.')
+@section('keywords', 'Luxury cars, Performance vehicles, Prestige automobiles, Exotic cars, High-end vehicles, Automotive excellence, Premium car dealership, Exclusive car collection, Luxury car showroom, Elite car selection')
 
 @section('content')
     <section id="banner">
