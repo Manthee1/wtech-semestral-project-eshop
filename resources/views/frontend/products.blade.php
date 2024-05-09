@@ -85,13 +85,13 @@
                             [
                                 'name' => 'Most Expensive',
                                 'value' => 'price',
-                                'sort' => 'asc',
+                                'sort' => 'desc',
                                 'icon' => 'cash',
                             ],
                             [
                                 'name' => 'Least Expensive',
                                 'value' => 'price',
-                                'sort' => 'desc',
+                                'sort' => 'asc',
                                 'icon' => 'cash',
                             ],
                             [
@@ -243,6 +243,11 @@
 
         // This is so that the sticky filter container follows your bottom, and not your top.
         function updateFilterContainerTop() {
+            // If the screen width is smaller then 700px, set the top to 0
+            if (window.innerWidth < 700) {
+                document.querySelector('.filter-container').style.top = '0px';
+                return;
+            }
             const filterContainer = document.querySelector('.filter-container');
             const navbar = document.querySelector('nav');
             filterContainer.style.top = `${document.body.clientHeight - filterContainer.clientHeight -20 }px`;

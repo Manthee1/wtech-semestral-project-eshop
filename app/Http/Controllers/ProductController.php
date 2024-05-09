@@ -288,7 +288,7 @@ class ProductController extends Controller
         $productsQuery = applyWheres($productsQuery->select('products.*'));
 
         if (request()->has('order') && request()->has('sort')) {
-            $productsQuery = $productsQuery->orderBy(request('order'), request('sort'));
+            $productsQuery = $productsQuery->orderByRaw("CASE WHEN " . request('order') . " IS NULL THEN 1 ELSE 0 END, " . request('order') . " " . request('sort'));
         }
 
 
