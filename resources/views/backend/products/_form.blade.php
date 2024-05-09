@@ -46,12 +46,13 @@
         <x-form.select name="make_id" :options="$makes" label="Product Make" :value="$product->make_id ?? null" class="flex-4" required id="make_id" />
         <x-form.select name="model_id" :options="$models" label="Product Model" :value="$product->model_id ?? null" class="flex-4" required id="model_id" />
         <x-form.input type="number" name="year" label="Product Year" :value="$product->year ?? null" required id="year" class="flex-4" min="0" />
-        <x-form.input type="number" name="price" label="Product Price" :value="$product->price ?? ''" required id="price" class="flex-6" step="0.01" min="0" />
+        <x-form.input type="number" name="price" label="Product Price" :value="$product->price ?? ''" required id="price" class="flex-6" step="1" min="0" />
         <x-form.input type="number" name="stock" label="Product Stock" :value="$product->stock ?? ''" required id="stock" class="flex-6" min="0" />
         <x-form.textarea name="description" label="Product Description" :value="$product->description ?? ''" required id="description" class="flex-12" rows="4" />
         {{-- is the product active --}}
         <div class='flex-12 flex flex-row flex-left'>
-            {{ html()->checkbox('active', isset($product) ? $product->active : true, ['class' => 'my-auto', 'id' => 'active']) }}
+            <input type="hidden" name="active" value="0">
+            {{ html()->checkbox('active', isset($product) ? $product->active : true, '1', ['class' => 'my-auto', 'id' => 'active']) }}
             <label class="my-auto" for="active">Active</label>
         </div>
     </div>
