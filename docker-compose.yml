@@ -38,10 +38,11 @@ services:
     image: phpmyadmin/phpmyadmin
     ports:
       - 8080:80
-    environment:
-      PMA_HOST: db
     env_file:
       - .env
+    environment:
+      PMA_HOST: db
+      UPLOAD_LIMIT: 64M
     depends_on:
       - db
     networks:
