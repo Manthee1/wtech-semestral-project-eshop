@@ -13,27 +13,27 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', 70);
+            $table->unsignedInteger('year');
             $table->unsignedInteger('price');
             $table->text('description')->nullable();
             $table->unsignedInteger('stock')->default(0);
             $table->unsignedBigInteger('make_id');
             $table->foreign('make_id')->references('id')->on('product_makes');
+            $table->unsignedBigInteger('model_id');
+            $table->foreign('model_id')->references('id')->on('product_models');
             $table->unsignedBigInteger('drivetrain_id')->nullable();
-            $table->foreign('drivetrain_id')->references('id')->on('product_drivetrains');
+            $table->foreign('drivetrain_id')->references('id')->on('product_drivetrains')->onDelete('set null');
             $table->unsignedBigInteger('body_type_id')->nullable();
-            $table->foreign('body_type_id')->references('id')->on('product_body_types');
+            $table->foreign('body_type_id')->references('id')->on('product_body_types')->onDelete('set null');
             $table->unsignedBigInteger('engine_type_id')->nullable();
-            $table->foreign('engine_type_id')->references('id')->on('product_engine_types');
+            $table->foreign('engine_type_id')->references('id')->on('product_engine_types')->onDelete('set null');
             $table->unsignedInteger('width')->nullable();
             $table->unsignedInteger('length')->nullable();
             $table->unsignedInteger('height')->nullable();
-            $table->unsignedBigInteger('model_id');
-            $table->foreign('model_id')->references('id')->on('product_models');
             $table->unsignedInteger('horse_power')->nullable();
-            $table->string('passenger_capacity')->nullable();
-            $table->unsignedInteger('year');
-            $table->string('efficiency')->nullable();
+            $table->unsignedInteger('passenger_capacity')->nullable();
+            $table->double('efficiency')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
