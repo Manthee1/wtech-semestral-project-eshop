@@ -29,11 +29,6 @@ window.addEventListener('load', function () {
 
 });
 
-function toggleNavbar() {
-    const navbar = document.querySelector('nav');
-    navbar.classList.toggle('open');
-}
-
 
 window.formatPrice = function (price) {
     // Euro without decimals and with commas every 3 digits and no decimals

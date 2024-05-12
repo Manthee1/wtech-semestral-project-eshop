@@ -93,7 +93,9 @@ class ProductController extends Controller
         // if delete_image array is set. remove the images from the product
         if ($request->has('delete_image')) {
             foreach ($request->delete_image as $imageId) {
-                Storage::disk('public')->delete(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $product->images()->find($imageId)->filename);
+                if (file_exists(public_path(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $product->images()->find($imageId)->filename))) {
+                    unlink(public_path(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $product->images()->find($imageId)->filename));
+                }
                 $product->images()->find($imageId)->delete();
             }
         }
@@ -111,7 +113,8 @@ class ProductController extends Controller
     {
         foreach ($images as $image) {
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs(env('APP_PRODUCTS_IMAGES_PATH'), $filename, 'public');
+            //Store to public_path(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $filename);
+            $image->move(public_path(env('APP_PRODUCTS_IMAGES_PATH')), $filename);
             $product->images()->create([
                 'filename' => $filename,
                 'sort' => 0,
@@ -128,7 +131,9 @@ class ProductController extends Controller
     {
         // Delete the product
         $product->images->each(function ($image) {
-            Storage::disk('public')->delete(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $image->filename);
+            if (file_exists(public_path(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $product->images()->find($imageId)->filename))) {
+                unlink(public_path(env('APP_PRODUCTS_IMAGES_PATH') . '/' . $product->images()->find($imageId)->filename));
+            }
             $image->delete();
         });
         $product->delete();

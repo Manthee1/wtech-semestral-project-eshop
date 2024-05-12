@@ -15,7 +15,7 @@ imported_folder = './public/img/products'
 output_file = './products-seed.sql'
 
 # Define the number of images to import
-num_images_to_import = 10000
+num_images_to_import = 100
 
 # Define the list of parameters to save
 

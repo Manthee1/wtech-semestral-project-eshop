@@ -5,19 +5,20 @@ Certainly! Below is a generic README.md template for your Laravel e-commerce pro
 Welcome to the Laravel E-Shop project! This is a web development project aimed at creating an e-commerce platform using Laravel.
 
 ## Table of Contents
+- [Laravel E-Shop](#laravel-e-shop)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Main Dependencies](#main-dependencies)
+  - [Installation](#installation)
+  - [Usage](#usage)
 
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
-PRobobly gonan be a e shop that sells you nfts and stuff. Idk.
+An Echop that sells cars
 
 
-## Dependencies
+## Main Dependencies
 * PHP 8.2
 * Laravel 10.0
 

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CartController;
 
 class RegisterController extends Controller
 {
@@ -74,6 +75,14 @@ class RegisterController extends Controller
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        // If the user is a regular user and has stuff in his cart.
+        // Automatically merge them with the database cart items.
+        $cookie_cart_items = (new CartController)->getCartItemsFromCookie();
+        if ($cookie_cart_items->isNotEmpty()) (new CartController)->mergeCartItemsWithDatabase();
     }
 
     public function showRegistrationForm()

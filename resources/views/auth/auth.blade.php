@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', route('login') ? 'Login' : 'Register')
+@section('title', Route::currentRouteName() === 'login' ? 'Login' : 'Register')
 @section('styles')
     <style>
         .auth-form-wrapper {
@@ -24,24 +24,24 @@
         <div class="m-auto">
             <div class="flex flex-row gap-2 mb-3">
                 <h5 id="auth-form-title" class="m-0 mr-auto font-bold">Login</h5>
-                <a id="registerSwitchButton" class="tab-button my-auto" onclick="switchTo('register')">Register</a>
-                <a id="loginSwitchButton" class="tab-button my-auto active" onclick="switchTo('login')">Login</a>
+                <a id="registerSwitchButton" class="tab-button my-auto" href="{{ route('register') }}">Register</a>
+                <a id="loginSwitchButton" class="tab-button my-auto active" href="{{ route('login') }}">Login</a>
             </div>
             <hr>
             <br>
 
-            {{ html()->form('POST', route('login'))->class('flex flex-column gap-4')->id('loginForm')->open() }}
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            {{ html()->form('POST', route('login'))->class('flex flex-column gap-4')->id('loginForm')->style(Route::currentRouteName() === 'login' ? '' : 'display: none')->open() }}
+            <x-form.input type="email" name="email" id="email" label="Email" required />
+            <x-form.input type="password" name="password" id="password" label="Password" required />
             <button class="button button-filled" type="submit">Login</button>
             {{ html()->form()->close() }}
 
-            {{ html()->form('POST', route('register'))->class('flex flex-column gap-4')->id('registerForm')->style('display: none')->open() }}
-            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
-            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
+            {{ html()->form('POST', route('register'))->class('flex flex-column gap-4')->id('registerForm')->style(Route::currentRouteName() === 'register' ? '' : 'display: none')->open() }}
+            <x-form.input type="text" name="first_name" id="first_name" label="First Name" required />
+            <x-form.input type="text" name="last_name" id="last_name" label="Last Name" required />
+            <x-form.input type="email" name="email" id="email" label="Email" required />
+            <x-form.input type="password" name="password" id="password" label="Password" required />
+            <x-form.input type="password" name="password_confirmation" id="password_confirmation" label="Confirm Password" required />
             <button class="button button-filled" type="submit">Register</button>
             {{ html()->form()->close() }}
             <br>
@@ -62,7 +62,7 @@
 
 @section('scripts')
     <script>
-        const formContainerEl = document.querySelector('.form-container');
+        const formContainerEl = document.querySelector('.auth-form-wrapper');
         const loginFormEl = document.getElementById('loginForm');
         const registerFormEl = document.getElementById('registerForm');
 

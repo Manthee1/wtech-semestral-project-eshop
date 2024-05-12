@@ -7,14 +7,19 @@
     color: #fff
     text-align: left
     padding: 0 10em
+    overflow: hidden
 
 .banner-image
     position: absolute
-    width: 70vw
+    width: 69vw
+    max-height: 100vh
     object-fit: contain
     z-index: -1
     right: 4rem
     bottom: 5%
+@media screen and (max-height: 800px)
+    #banner .banner-image
+        max-height: 55vh
 
 @media (max-width: 700px)
     #banner
@@ -25,3 +30,8 @@
         width: 125%
         left: 0
         bottom: calc(13vh - 11vw)
+    .text-content
+        margin-bottom: 15rem
+    @media screen and (max-height: 600px)
+        #banner .banner-image
+            display: none

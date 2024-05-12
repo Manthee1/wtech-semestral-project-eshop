@@ -1,8 +1,8 @@
 @extends('frontend.layout')
 
 @section('title', 'Products')
-@section('description', 'Step into a world where every car is a masterpiece of engineering and design. Unleash the thrill of driving with our meticulously curated collection.');
-@section('keywords', 'Luxury sedans, Sports cars, SUVs, Exotic vehicles, High-performance automobiles, Prestige car models, Premium car brands, Luxury car inventory, Top-tier automotive collection, Exclusive car listings');
+@section('description', 'Step into a world where every car is a masterpiece of engineering and design. Unleash the thrill of driving with our meticulously curated collection.')
+@section('keywords', 'Luxury sedans, Sports cars, SUVs, Exotic vehicles, High-performance automobiles, Prestige car models, Premium car brands, Luxury car inventory, Top-tier automotive collection, Exclusive car listings')
 
 @section('content')
 
@@ -123,6 +123,7 @@
                     </ul>
 
                     <select class="visible-md select-small" id="order-select" onchange="window.location.href = this.value">
+                        <option value="" {{ !request()->input('order') ? 'selected' : '' }}>Select</option>
                         @foreach ($orderings as $ordering)
                             <option value="{{ route('products-catalog', array_merge($requestParams, ['order' => $ordering['value'], 'sort' => $ordering['sort']])) }}"
                                 {{ request()->input('order') == $ordering['value'] && request()->input('sort') == $ordering['sort'] ? 'selected' : '' }}>

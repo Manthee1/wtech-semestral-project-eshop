@@ -4,7 +4,7 @@
             <ion-icon name="car-sport-outline"></ion-icon>
             <span>rideout</span>
         </a>
-        <a href="/admin.html" class=" m-0 ml-auto">
+        <a href="{{ route('admin.dashboard') }}" class="m-0 ml-auto">
             <p class="">Admin</p>
         </a>
 

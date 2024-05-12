@@ -75,7 +75,7 @@
         </a>
     </div>
     <div class="menu-container">
-        <button class="button-icon-clear navbar-toggle" onclick="toggleNavbar()">
+        <button class="button-icon-clear navbar-toggle" onclick="document.querySelector('nav').classList.toggle('open')">
             <ion-icon class="open-icon" name="menu"></ion-icon>
             <ion-icon class="close-icon" name="close"></ion-icon>
         </button>

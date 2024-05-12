@@ -8,6 +8,28 @@
 
 
 # WTECH semestrálny projekt (elektronicky obchod) - Dokumentácia
+## Table of Contents
+- [WTECH semestrálny projekt (elektronicky obchod) - Dokumentácia](#wtech-semestrálny-projekt-elektronicky-obchod---dokumentácia)
+  - [Table of Contents](#table-of-contents)
+  - [Zadanie](#zadanie)
+  - [Introdukcia](#introdukcia)
+  - [Diagram fyzického dátového modelu](#diagram-fyzického-dátového-modelu)
+  - [Programovacie prostredie](#programovacie-prostredie)
+  - [Návrhové rozhodnutia](#návrhové-rozhodnutia)
+  - [Stručný opis implementácie vybraných prípadov použitia](#stručný-opis-implementácie-vybraných-prípadov-použitia)
+    - [Zmena množstva pre daný produkt](#zmena-množstva-pre-daný-produkt)
+    - [Prihlásenie](#prihlásenie)
+    - [Základné filtrovanie a Vyhľadávanie](#základné-filtrovanie-a-vyhľadávanie)
+    - [Pridanie produktu do košíka](#pridanie-produktu-do-košíka)
+    - [Stránkovanie](#stránkovanie)
+  - [Snímky obrazoviek](#snímky-obrazoviek)
+    - [Detail produktu](#detail-produktu)
+    - [Prihlásenie](#prihlásenie-1)
+    - [Homepage](#homepage)
+    - [Nákupný košík s vloženým produktom](#nákupný-košík-s-vloženým-produktom)
+  - [Ďalšie informácie](#ďalšie-informácie)
+
+
 ## Zadanie
 Vytvorte webovú aplikáciu - eshop, ktorá komplexne rieši nižšie definované prípady použitia vo vami zvolenej doméne (napr. elektro, oblečenie, obuv, nábytok). Presný rozsah a konkretizáciu prípadov použitia si dohodnete s vašim vyučujúcim.
 

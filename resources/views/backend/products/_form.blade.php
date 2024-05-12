@@ -87,8 +87,8 @@
                     <img width="340px" src="{{ $image->getUrl() }}" alt="{{ $product->name }}">
                     {{-- Remove checkbox --}}
                     <div class="flex flex-row flex-left gap-1  width-full">
-                        <input type="checkbox" name="delete_image[]" value="{{ $image->id }}"><span></span>
-                        <span>Delete Image</span>
+                        <input id="image-{{ $image->id }}" type="checkbox" name="delete_image[]" value="{{ $image->id }}"><span></span>
+                        <label class="m-0" for="image-{{ $image->id }}">Remove</label>
                     </div>
                 </div>
             @endforeach
