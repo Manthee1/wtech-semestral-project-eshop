@@ -1,5 +1,3 @@
-Certainly! Below is a generic README.md template for your Laravel e-commerce project:
-
 # Laravel E-Shop
 
 Welcome to the Laravel E-Shop project! This is a web development project aimed at creating an e-commerce platform using Laravel.
